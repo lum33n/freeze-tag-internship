@@ -1,7 +1,31 @@
 \usepackage[english]{babel}
-\usepackage{geometry}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{verbatim}
 
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage[textsize=small, textwidth=2cm]{todonotes}
+\usepackage{thmtools}
+\usepackage[colorlinks=true, citecolor=red]{hyperref}
+\usepackage{cleveref}
+
+\declaretheorem[name=Théorème, numberwithin=section]{theorem}
+\declaretheorem[name=Lemme, sibling=theorem]{lemma}
+\declaretheorem[name=Proposition, sibling=theorem]{prop}
+\declaretheorem[name=Conjecture, sibling=theorem]{conjecture}
+
+
 \geometry{hmargin=2.5cm, vmargin=1.5cm}
 \graphicspath{ {./images/} }
+
+\newenvironment{clem}[1]{\textcolor{purple}{Clément:~#1}}{}
+\newenvironment{lumen}[1]{\textcolor{yellow}{Lumen:~#1}}{}
+
+\let\le\leqslant
+\let\ge\geqslant
+\let\leq\leqslant
+\let\geq\geqslant
+\let\nleq\nleqslant
+\let\ngeq\ngeqslant
