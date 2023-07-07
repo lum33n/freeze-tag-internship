@@ -8,7 +8,7 @@ Afin de prouver cette borne, on effectue d'abord une disjonction de cas sur la t
 
 On prouvera:
 
-\(\forall P, \forall \alpha, \gamma(P) <= max(3 + chord(\alpha), 1 + 2chord(\frac{\pi}{2} - \frac{\alpha}{4})) \)
+\(\forall P, \forall \alpha, \gamma(P) \leq max(3 + chord(\alpha), 1 + 2chord(\frac{\pi}{2} - \frac{\alpha}{4})) \)
 
 où $\gamma$ représente la longueur du chemin minimal pour un set de point P donné. et $chord$ représente la longueur d'un arc de cercle de rayon 1 et d'angle $\theta$ en particulier, $chord(\theta) = 2\sin(\theta/2)$
 
@@ -21,7 +21,7 @@ Ce qui montre que $\alpha_5 < 3.603565$
 \newline
 Dans la suite, on utilisera la notation $\gamma(T, P)$ pour donner le temps de réveil de P suivant l'arbre de réveil T.
 On a alors $\forall P, \gamma(P) = \min_T(\gamma(T,P))$
-et donc $\forall P, \forall T, \gamma(P) <= \gamma(T, P)$
+et donc $\forall P, \forall T, \gamma(P) \leq \gamma(T, P)$
 \newline
 \newline
 \textbf{\Large{Enveloppe convexe de taille 5}}
@@ -38,7 +38,7 @@ Soit $P$ un ensemble de point, on tourne le cercle comme prévu. Pour l'exemple,
 \newline
 1er cas: $\exists X, |X| \geq 2$
 Dans ce cas, en réveillant les deux robots dans le cône avec celui initial, on peut aller réveiller les trois derniers où qu'ils soient dans le cercle. Réveiller les robots dans un cône d'angle $\alpha$ prend au plus un temps $1 + chord(\alpha)$ ce qui est montré dans d'autres papiers de recherche.
-On peut donc réveiller tout le monde avec $\gamma(P) <= 1 + chord(\alpha) + 2 = 3 + chord(\alpha)$
+On peut donc réveiller tout le monde avec $\gamma(P) \leq 1 + chord(\alpha) + 2 = 3 + chord(\alpha)$
 Notons que cette preuve s'applique dès que deux points sont sur un cône de taille $\alpha$ commun. On peut donc supposer désormais que cette situation n'arrive plus.
 \newline
 \newline
