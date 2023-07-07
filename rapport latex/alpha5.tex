@@ -8,9 +8,15 @@ Afin de prouver cette borne, on effectue d'abord une disjonction de cas sur la t
 
 On prouvera:
 
-\(\forall P, \forall \alpha, \gamma(P) \leq max(3 + chord(\alpha), 1 + 2chord(\frac{\pi}{2} - \frac{\alpha}{4})) \)
-
+\begin{lemma}\label{chord}
+Pour tout $P$, pour tout $\alpha >0$, on a
+$$\gamma(P) \leq max(3 + chord(\alpha), 1 + 2chord(\frac{\pi}{2} - \frac{\alpha}{4})) $$
 où $\gamma$ représente la longueur du chemin minimal pour un set de point P donné. et $chord$ représente la longueur d'un arc de cercle de rayon 1 et d'angle $\theta$ en particulier, $chord(\theta) = 2\sin(\theta/2)$
+\end{lemma}
+
+\begin{proof}[du théorème bidule ]
+ma preuve
+\end{proof}
 
 En effet, on remarque que $3+chord(\alpha)$ est croissant et que $1 + 2chord(\frac{\pi}{2} - \frac{\alpha}{4})$ est décroissante, ainsi le minimum des deux fonctions est atteint en leur croisement qui se produit en une ordonnée $y < 3.603565$ et dont la valeur exacte n'est pas facilement calculable. Ainsi on a
 
@@ -22,11 +28,8 @@ Ce qui montre que $\alpha_5 < 3.603565$
 Dans la suite, on utilisera la notation $\gamma(T, P)$ pour donner le temps de réveil de P suivant l'arbre de réveil T.
 On a alors $\forall P, \gamma(P) = \min_T(\gamma(T,P))$
 et donc $\forall P, \forall T, \gamma(P) \leq \gamma(T, P)$
-\newline
-\newline
-\textbf{\Large{Enveloppe convexe de taille 5}}
-\newline
-\newline
+\subsection{Enveloppe convexe de taille 5}
+
 Tout d'abord on tournera notre figure en sélectionnant un point tel que son axe coupe le cercle en deux demi-cercles contenant chacun 2 points. Un tel point existe toujours.
 
 \includegraphics[scale=0.5]{initial position}
@@ -106,11 +109,9 @@ Si le point dans D appartient au demi-cercle du haut:
 -si en bas on a les deux points du même côté, on commence par celui au milieu des deux points qui le collent pour obtenir le même résultat.
 
 Si le point dans D appartient au demi-cercle du bas, alors commencer par $b$ ou le point libre du haut solutionnera toujours le problème...
-\newline
-\newline
-\textbf{\Large{Enveloppe convexe de taille 4 ou 3}}
-\newline
-\newline
+
+\subsection{convexe de taille 4 ou 3}
+
 Désormais, il faut terminer avec les cas où l'enveloppe convexe est de taille 3 ou 4. Heureusement, ces cas sont plus simples.
 Si l'enveloppe convexe est de taille 3, on va vers le point le plus proche du centre qui soit à l'intérieur de l'enveloppe convexe, ensuite un des deux robots ira chercher le deuxième point à l'intérieur tandis que le deuxième ira réveiller le point le plus proche du triangle avant d'aller sur les deux autres.
 
