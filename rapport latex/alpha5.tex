@@ -57,7 +57,9 @@ Tout d'abord on tournera notre figure en sélectionnant un point tel que son axe
 On sépare ensuite le cercle en différents cônes d'angle $\alpha$ nommés $A$, $B$, $C$, et $D$. C'est en effet ce $\alpha$ qui apparaîtra dans la formule finale. On notera $|X|$ le nombre de point dans le cône $X$ et nous ferons des disjonctions de cas sur ces derniers.
 
 Soit $P$ un ensemble de point, on tourne le cercle comme prévu. Pour l'exemple, on positionnera les points sur le cercle mais les chemins utilisés marcheront quelque soit leur positionnement tant que l'enveloppe convexe est de la taille prévue.
+
 \subsubsection*{1er cas} $\exists X, |X| \geq 2$
+
 Dans ce cas, en réveillant les deux robots dans le cône avec celui initial, on peut aller réveiller les trois derniers où qu'ils soient dans le cercle. Réveiller les robots dans un cône d'angle $\alpha$ prend au plus un temps $1 + chord(\alpha)$ ce qui est montré dans d'autres papiers de recherche.
 On peut donc réveiller tout le monde avec $\gamma(P) \leq 1 + chord(\alpha) + 2 = 3 + chord(\alpha)$
 Notons que cette preuve s'applique dès que deux points sont sur un cône de taille $\alpha$ commun. On peut donc supposer désormais que cette situation n'arrive plus.
@@ -79,7 +81,12 @@ Par symétrie, on peut considérer que le point dans $D$ appartient au demi-cerc
 
 \begin{itemize}
 
+\item Si $b$ est entre $A$ et $B$
+
+\begin{itemize}
+
 \item si $b$ entre $A$ et $B$ et en bas 1 point de chaque côté
+
 on choisit pour T l'arbre commençant en bas à gauche et séparant le travail des robots en 2 comme avant.
 On prend ensuite le pire cas possible pour ce T.
 
@@ -88,7 +95,7 @@ On prend ensuite le pire cas possible pour ce T.
 En oubliant pas que l'angle entre $a$ et le point en bas à gauche est d'au moins $\alpha$ on peut donc appliquer le lemme \ref{worstchord} afin de conclure
 $\gamma(P) \leq 1 + 2chord(\frac{\pi}{2} - \frac{\alpha}{4})$
 
--si $b$ entre $A$ et $B$ et deux points entre $C$ et $D$
+\item si $b$ entre $A$ et $B$ et deux points entre $C$ et $D$
 l'arbre est le suivant:
 
 \includegraphics[scale=0.45]{3eme cas2}
@@ -99,7 +106,15 @@ Et pour la dernière branche, on applique \ref{worstchord} pour obtenir cette bo
 
 $=> \gamma(P) \leq 1 + 2chord(\frac{\pi}{2} - \frac{\alpha}{4})$
 
-\item par la suite, le seul sous cas difficile est celui où $b$ entre $C$ et $D$ et les deux points du bas sont entre $A$ et $C$.
+\item Si $b$ entre $A$ et $B$ et deux points entre $A$ et $C$ on applique le même arbre
+
+\end{itemize}
+
+\item Si $b$ est entre $C$ et $D$
+
+\begin{itemize}
+
+\item Le seul cas difficile est celui où les deux points du bas sont entre $A$ et $C$.
 suivant l'arbre suivant:
 
 \includegraphics[scale=0.45]{3eme cas3}
@@ -113,6 +128,20 @@ on obtient alors
 \gamma(P) &\leq max\left(1+2chord\left(\frac{\pi}{2} - \frac{\alpha}{4}\right), 1 + chord\left(\frac{\pi}{2} - \frac{3\alpha}{2}\right) + chord\left(\frac{\pi}{2} - \frac{\alpha}{2}\right)\right) \\
 &\leq 1+2chord\left(\frac{\pi}{2} - \frac{\alpha}{4}\right)
 \end{align*}
+
+\item Si l'on a 2 points entre $C$ et $D$, alors on peut effectuer l'arbre suivant
+
+\includegraphics[scale=0.4]{3eme cas4}
+
+On peut alors comme d'habitude utiliser \ref{worstchord} pour conclure
+
+\item Pour dernier cas, nous avons 1 point de part et d'autre de la vertical en bas alors par un chemin similaire au point précédent:
+
+\includegraphics[scale=0.4]{3eme cas5}
+
+Comme la dernière fois \ref{worstchord} nous permet de conclure
+
+\end{itemize}
 \end{itemize}
 
 \subsubsection*{4eme cas} $|A| = |B| = |C| = |D| = 1$
