@@ -4,7 +4,14 @@
 
 Le problème du réveil des robots consiste en un robot éveillé et des robots endormis dans un disque autour de lui. Un robot éveillé peut aller vers d'autres robots pour les réveiller et l'objectif est de réveiller tous les robots le plus vite possible.
 
-\includegraphics[scale=0.4]{opt_non_plan}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.4]{opt_non_plan}
+  \caption{Mon titre}
+  \label{fig:opt_non_plan}
+\end{figure}
+\todo[inline,backgroundcolor=purple]{Il faudrait mettre les figures dans des environnements
+  comme ci dessus et les référencer ainsi: Figure~\ref{fig:opt_non_plan}}
 
 Dans le cas général, où les robots endormis sont disposés n'importe comment, le problème est NP-dur. Le meilleur algorithme existant, traçant le chemin des robots pour résoudre le cas général consiste en une programmation dynamique avec une complexité de $\frac{3^n}{\sqrt{n}}$ où $n$ est le nombre de robots.
 
