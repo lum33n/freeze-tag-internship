@@ -1,4 +1,4 @@
-\usepackage[english]{babel}
+\usepackage[french]{babel}
 \usepackage[a4paper, margin=2.5cm]{geometry}
 \usepackage[utf8]{inputenc}
 %\usepackage[T1]{fontenc}
@@ -6,7 +6,7 @@
 \usepackage{verbatim}
 
 \usepackage{amsmath, amsthm, amssymb}
-\usepackage[textsize=small, textwidth=2cm]{todonotes}
+\usepackage[textsize=tiny, textwidth=2cm]{todonotes}
 \usepackage{thmtools}
 %\usepackage[colorlinks=true, citecolor=red]{hyperref}
 \usepackage{cleveref}
@@ -15,7 +15,8 @@
 \declaretheorem[name=Lemme, sibling=theorem]{lemma}
 \declaretheorem[name=Proposition, sibling=theorem]{prop}
 \declaretheorem[name=Conjecture, sibling=theorem]{conjecture}
-
+%\renewcommand*{\proofname}{Preuve}
+%\addto\captionsfrench{\renewcommand\proofname{Preuve}}
 
 \geometry{hmargin=2.5cm, vmargin=1.5cm}
 \graphicspath{ {./images/} }
@@ -29,3 +30,6 @@
 \let\geq\geqslant
 \let\nleq\nleqslant
 \let\ngeq\ngeqslant
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\chord}{chord}

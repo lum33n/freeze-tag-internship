@@ -1,5 +1,7 @@
 \section{Alpha 5}
 
+\clem{Dans cette section, nous montrerons le résultat suivant, obtenu pendant
+  mon stage avec Cyril Gavoille.}
 Cette partie est une contribution personnelle dédiée à obtenir une borne de $\alpha_5$ avec l'aide de Cyril Gavoille.
 
 \begin{theorem}\label{alpha5borne}
@@ -9,6 +11,9 @@ $$\alpha_5 < 3.603564775$$
 \end{theorem}
 
 On prouvera:
+\todo[inline]{introduire un peu le lemme, dire que le théorème principal en découle directement.\\
+  Introduire $\gamma$ et $P$ avant le lemme. Combien de points y a t il dans $P$ ?
+  Si $|P|$ est constitué de 5 points  pourquoi $\gamma$ serait un chemin ?\\}
 
 \begin{lemma}\label{chord}
 Pour tout $P$, pour tout $\alpha >0$, on a
@@ -17,7 +22,10 @@ où $\gamma$ représente la longueur du chemin minimal pour un set de point P do
 \end{lemma}
 
 \begin{proof}[\ref{chord} $\Rightarrow$ \ref{alpha5borne}]
-
+\todo{Il faut éviter autant que possible les formules mathématiques dans le
+  raisonnement logique. Le symbole $\Rightarrow$ a un sens logique, on préfèrera
+écrire ``Preuve de \ref{alpha5borne} en supposant Lemme \ref{chord}''. De même
+éviter d'utiliser $\forall$ et $\exists$, $\le$ dans le texte.}
 En effet, on remarque que $3+chord(\alpha)$ est croissante et que $1 + 2chord(\frac{\pi}{2} - \frac{\alpha}{4})$ est décroissante, ainsi le minimum des deux fonctions est atteint en leur croisement qui se produit en une abscisse d'environ $0.6131233066$ et dont la valeur exacte n'est pas facilement calculable. Ainsi on a
 
 \(\forall P, \gamma(P) < 3.603564775\)
@@ -29,9 +37,9 @@ Ce qui montre que $\alpha_5 < 3.603564775$
 \begin{lemma}\label{worstchord}
 Pour tout $n$ et $x_1$, $x_2$, ..., $x_n$ des points sur un arc de demi-cercle dans l'ordre. Alors le chemin $x_1$ - $x_2$ - ... - $x_n$ est le plus long lorsque les points sont uniformément répartis sur l' arc de demi-cercle.
 \end{lemma}
-\begin{proof}[\ref{worstchord}]
+\begin{proof}
 la longueur de la corde entre deux points séparés d'un angle $\theta$ est de $2sin\left(\frac{\theta}{2}\right)$. Ainsi la longueur du chemin est 
-
+\todo{C'est évident à partir du contexte mais il faut dire qui sont les $\theta_k$.}
 $$2\sum_{k=1}^{n-1} sin\left(\frac{\theta_{k+1} - \theta_k}{2}\right)$$
 
 Or $\frac{\theta_{k+1} - \theta_k}{2} \in ]0, \frac{\pi}{2}[$
@@ -45,20 +53,24 @@ Dans la suite, on utilisera la notation $\gamma(T, P)$ pour donner le temps de r
 On a alors $\forall P, \gamma(P) = \min_T(\gamma(T,P))$
 et donc $\forall P, \forall T, \gamma(P) \leq \gamma(T, P)$
 
-Début de la preuve
-
 
 \subsection{Enveloppe convexe de taille 5}
 
-Tout d'abord on tournera notre figure en sélectionnant un point tel que son axe coupe le cercle en deux demi-cercles contenant chacun 2 points. Un tel point existe toujours.
+\clem{Soit $\alpha > 0$ et $P$ ...} Tout d'abord on tournera notre figure en sélectionnant un point tel que son axe coupe le cercle en deux demi-cercles contenant chacun 2 points. Un tel point existe toujours.
 
 \includegraphics[scale=0.5]{initial_position}
 
-On sépare ensuite le cercle en différents cônes d'angle $\alpha$ nommés $A$, $B$, $C$, et $D$. C'est en effet ce $\alpha$ qui apparaîtra dans la formule finale. On notera $|X|$ le nombre de point dans le cône $X$ et nous ferons des disjonctions de cas sur ces derniers.
+On sépare ensuite le cercle en différents cônes d'angle $\alpha$ nommés $A$,
+$B$, $C$, et $D$ \clem{voir Figure ...}. C'est en effet ce $\alpha$ qui apparaîtra dans la formule finale. On notera $|X|$ le nombre de point dans le cône $X$ et nous ferons des disjonctions de cas sur ces derniers.
 
-Soit $P$ un ensemble de point, on tourne le cercle comme prévu. Pour l'exemple, on positionnera les points sur le cercle mais les chemins utilisés marcheront quelque soit leur positionnement tant que l'enveloppe convexe est de la taille prévue.
+Soit $P$ un ensemble de point, on tourne le cercle comme prévu. Pour l'exemple,
+on positionnera les points sur le cercle mais les chemins utilisés marcheront
+quelque soit leur positionnement tant que l'enveloppe convexe est de la taille
+prévue.\clem{Pas besoin de reparler de la rotation et de $P$. La dernière phrase
+  est assez vague.}
 
-\subsubsection*{1er cas} $\exists X, |X| \geq 2$
+\subsubsection*{1er cas}\clem{Il existe un cône $X \in \{A,B,C,D\}$ tel que $|X|
+  \ge 2$} $\exists X, |X| \geq 2$
 
 Dans ce cas, en réveillant les deux robots dans le cône avec celui initial, on peut aller réveiller les trois derniers où qu'ils soient dans le cercle. Réveiller les robots dans un cône d'angle $\alpha$ prend au plus un temps $1 + chord(\alpha)$ ce qui est montré dans d'autres papiers de recherche.
 On peut donc réveiller tout le monde avec $\gamma(P) \leq 1 + chord(\alpha) + 2 = 3 + chord(\alpha)$
