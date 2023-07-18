@@ -700,8 +700,8 @@ def angles_to_graph(anglelist): #put all radius to 1 because for now my programs
 #pylab.plot([2*i for i in range(len(ysnpair[2:]))], ysnpair[2:])
 #pylab.show()
 
-working_graph = angles_to_graph([0, 90-15, 180 - 15, 270 - 15, 360-30])
-working_graph.show([((0, 0), working_graph.point[4]), (working_graph.point[4], working_graph.point[0]), ((working_graph.point[0]), (working_graph.point[1])), ((working_graph.point[4]), (working_graph.point[3])), ((working_graph.point[3]), (working_graph.point[2]))], 0,alpha_angle = 15*math.pi/180, circle = True)
+working_graph = angles_to_graph([0, 132, 172, 220, 310])
+working_graph.show([((0, 0), working_graph.point[3]), (working_graph.point[3], working_graph.point[4]), ((working_graph.point[4]), (working_graph.point[0])), ((working_graph.point[3]), (working_graph.point[2])), ((working_graph.point[2]), (working_graph.point[1]))], 0,alpha_angle = 15*math.pi/180, circle = True)
 
 #if __name__ == "__main__":
 #	n = 11
