@@ -21,8 +21,13 @@ Dans le cadre d'un cercle où les points sont répartis uniformément, une optim
 
 Enfin, c'est ce qu'il aurait été possible de dire si segment permettait de donner les solutions optimales. Malheureusement, cela n'a pas été prouvé et dans le cas plus général convexe, on observe des solutions optimales non planaires et donc automatiquement, segment n'est pas optimal, en voici un exemple:
 
-\includegraphics[scale=0.5]{opt_non_plan}
-\includegraphics[scale=0.5]{seg_non_plan}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{opt_non_plan}
+  \includegraphics[scale=0.5]{seg_non_plan}
+  \caption{Non optimalité de Segment}
+  \label{fig:segopt}
+\end{figure}
 
 On a à gauche la solution optimale présentant un croisement, exploitant que la branche à gauche est plus courte que celle de droite tandis que sur l'image de droite, on trouve la meilleure solution planaire possible, soit celle donnée par segment. On voit donc bien que segment ne résout pas complètement le cas convexe mais l'approxime.
 
@@ -59,7 +64,7 @@ Grâce à ces optimisations on sera descendu de 5 minutes et 17 secondes à 4.5 
 
 \subsection{Mon propre algorithme}
 
-En arrivant à mon stage, je suis arrivé avec un algorithme en tête cherchant à résoudre le problème dans le cas convexe, un algorithme se situant entre le brute force et segment. Malheureusement, il n'est pas polynomial, et il ne résout pas non plus le problème. Cette approche reste sur l'approche consistant à choisir des sous ensembles pour nos robots sauf que là où segment coupe en deux segments et brute force choisi tous les sous groupes de travail de possible, ce nouvel algorithme sélectionne des ensembles de points dont les enveloppes convexes sont disjointes. Cela revient à tracer une droite sur un cercle pour couper le cercle en deux morceaux. Segment est ainsi le cas particulier où le point de départ est forcement sur la droite de coupure et présente donc n possibilités là où mon algorithme présente $n^2$ explorations récursives. L'analyse de la complexité d'un tel algorithme toujours avec cache est extrêmement compliquée et c'est seulement expérimentalement qu'on observe la nature exponentielle du nombre d'étape. Cet algorithme permet de trouver des solutions non planaires ce qui n'était pas le cas de segment. Malheureusement, le même contre exemple que pour segment permet de conclure à la non optimalité de cet algorithme. Pour trouver ce contre-exemple, il a d'ailleurs fallu que j'implémente l'algorithme et que je l'optimise au même titre que l'algorithme de brute force afin de le faire tourner jusqu'à trouver un résultat où le brute force est meilleur que mon algorithme. En python, il me fallait 720 secondes pour un seul test alors qu'en c++, j'en faisais plusieurs par seconde grâce à une nouvelle implémentation.
+En arrivant à mon stage, je suis arrivé avec un algorithme en tête cherchant à résoudre le problème dans le cas convexe, un algorithme se situant entre le brute force et segment. Malheureusement, il n'est pas polynomial, et il ne résout pas non plus le problème. Cette approche reste sur l'approche consistant à choisir des sous ensembles pour nos robots sauf que là où segment coupe en deux segments et brute force choisi tous les sous groupes de travail de possible, ce nouvel algorithme sélectionne des ensembles de points dont les enveloppes convexes sont disjointes. Cela revient à tracer une droite sur un cercle pour couper le cercle en deux morceaux. Segment est ainsi le cas particulier où le point de départ est forcement sur la droite de coupure et présente donc n possibilités là où mon algorithme présente $n^2$ explorations récursives. L'analyse de la complexité d'un tel algorithme toujours avec cache est extrêmement compliquée et c'est seulement expérimentalement qu'on observe la nature exponentielle du nombre d'étape. Cet algorithme permet de trouver des solutions non planaires ce qui n'était pas le cas de segment. Malheureusement, \ref{fig:segopt} permet de conclure à la non optimalité de cet algorithme. Pour trouver ce contre-exemple, il a d'ailleurs fallu que j'implémente l'algorithme et que je l'optimise au même titre que l'algorithme de brute force afin de le faire tourner jusqu'à trouver un résultat où le brute force est meilleur que mon algorithme. En python, il me fallait 720 secondes pour un seul test alors qu'en c++, j'en faisais plusieurs par seconde grâce à une nouvelle implémentation.
 En dépit de ses défauts, un tel algorithme reste plus rapide que l'algorithme de brute force en effet, après y avoir ajouté exactement les nouvelles améliorations de brute force pour le cas uniforme, on obtient l'execution de cet algorithme pour $n = 17$ en 0.05 secondes ce qui permet enfin de viser des n plus grands. avec mon faible ordinateur, n = 32 n'était alors plus un rêve.
 
 \subsection{Conjectures}
@@ -68,13 +73,23 @@ Ainsi, on possède des algorithmes plus rapides pour explorer les conjectures pl
 
 Et c'est alors en voulant dessiner un graphe des $\beta_{2n}$ (avec segment) pour le rapport de stage afin de justifier la conjecture que j'ai remarqué quelque chose... de surprenant.
 
-\includegraphics[scale=0.5]{beta_2n1}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{beta_2n1}
+  \caption{$\beta_{2n}$}
+  \label{fig:beta2n1}
+\end{figure}
 
 On observe bel et bien le petit saut en $n = 62$
 cependant... on observe deux pics avant cela, un pic en $n = 14$ et un faux pic en $n = 24$ qui en réalité ne casse pas la conjecture. Mais ce qui est important, c'est qu'on observe une exception bien avant $n = 62$! or pour $n = 14$ on peut aisément faire le calcul avec l'algorithme de brute force. Et l'algorithme de brute force et segment coïncident pour $n \leq 17$
 On alors bien que la conjecture était fausse. On pourrait alors imaginer de nouvelles conjectures, en particulier sur où sont les exceptions. Il a d'abord été proposé par mon encadrant des formules basées sur $4^n$ car 4 est un maximum, 16 est proche d'une exception et 64 est un maximum local. Cependant, n'ayant aucune autre exception pour $n \leq 300$ la série se casse. Peut être peut on alors se dire qu'il s'agissait d'exceptions et qu'il n'y en a plus après, et pourtant...
 
-\includegraphics[scale=0.5]{beta_2n2}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{beta_2n2}
+  \caption{$\beta_{2n}$ jusqu'à $n = 500$}
+  \label{fig:beta2n2}
+\end{figure}
 
 On observe rien de plus sur cette figure, elle semble lisse après les exceptions et prend désormais en compte les $n \leq 1000$ ce qui va bien plus loin, mais.. en cherchant avec python des maximums et des minimums, voici ce que l'on obtient:
 

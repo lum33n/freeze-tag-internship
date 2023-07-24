@@ -7,11 +7,9 @@ Le problème du réveil des robots consiste en un robot éveillé et des robots 
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.4]{opt_non_plan}
-  \caption{Mon titre}
+  \caption{Exemple de réveil}
   \label{fig:opt_non_plan}
 \end{figure}
-\todo[inline,backgroundcolor=purple]{Il faudrait mettre les figures dans des environnements
-  comme ci dessus et les référencer ainsi: Figure~\ref{fig:opt_non_plan}}
 
 Dans le cas général, où les robots endormis sont disposés n'importe comment, le problème est NP-dur. Le meilleur algorithme existant, traçant le chemin des robots pour résoudre le cas général consiste en une programmation dynamique avec une complexité de $\frac{3^n}{\sqrt{n}}$ où $n$ est le nombre de robots.
 
@@ -23,15 +21,10 @@ Il reste cependant beaucoup de choses à explorer sur ce problème lorsque l'on 
 
 Le problème se place sur un plan muni de la distance euclidienne. Le robot réveillé est en $(0,0)$ et le problème se constitue donc de $n$ points chacun représentant les robots endormis dans le disque de rayon 1 et de centre $(0,0)$. On représente une solution au problème du réveil des robots par un arbre binaire couvrant tous les sommets. En effet, en chaque sommet, un robot entre, et on a alors 2 robots à déplacer si no le souhaite, formant alors un arbre binaire dont la racine est le premier robot éveillé.
 
-On pondère les arêtes de notre arbre par la distance de l'arête et on considère la profondeur de l'arbre comme étant la somme des poids des arêtes depuis la racine. Dès lors, le temps de réveil d'un arbre donné est la longueur de la plus grande branche et le temps de réveil du problème est $\min_{T} \tr(T, x_1, .., x_n)$\todo[backgroundcolor=purple]{écrire $\dots$ plutôt que $...$} où $\tr$ est le temps de réveil sachant un arbre T et l'objectif d'un algorithme est d'obtenir un arbre minimum.
+On pondère les arêtes de notre arbre par la distance de l'arête et on considère la profondeur de l'arbre comme étant la somme des poids des arêtes depuis la racine. Dès lors, le temps de réveil d'un arbre donné est la longueur de la plus grande branche et le temps de réveil du problème est $\min_{T} \tr(T, x_1, \dots, x_n)$ où $\tr$ est le temps de réveil sachant un arbre T et l'objectif d'un algorithme est d'obtenir un arbre minimum.
 
 On peut alors définir $\alpha_n = \max_{x_1, .., x_n} \min_T \tr(T, x_1, ..,
 x_n)$
-\todo[backgroundcolor=purple]{Quand tu écris ``min'' dans une
-  formule, LaTeX comprend ça comme un produit des variables $m$ $i$ et
-  $n$. Il vaut mieux écrire $\min$. Cela vaut aussi pour $\sin$, et toutes les
-  fonctions mathématiques connues. De même tu peux définir des nouveaux
-  opérateurs comme $\tr$ (voir header.tex)}
 
 On a déjà $\alpha_1 = 1$,$\alpha_2 = \alpha_3 = 3$ et $\alpha_4 = 1 + 2\sqrt{2}$. De plus, grâce à des cônes, nous avons que $\alpha_n \leq 3 + \frac{8\pi}{\sqrt{n}}$ il est possible de faire mieux en pratique mais le résultat possède une constante plus compliquée que $8\pi$
 
