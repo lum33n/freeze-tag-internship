@@ -1,11 +1,10 @@
 \section{Implémentation C++}
 
-Il n'est pas clair quelle est la forme de l'ensemble de point qui mènera au pire temps de réveil. Cependant, on peut conjecturer qu'il s'agirait d'une répartition uniforme des points sur le cercle et c'est dans ce but que l'on a étudié selon divers algorithmes le temps de réveil du cas "uniforme" que l'on appelera $\beta_n$.
+Il n'est pas clair quelle est la forme de l'ensemble de point qui mènera au pire temps de réveil. Cependant, on peut conjecturer que pour le cas pair, il s'agirait d'une répartition uniforme des points sur le cercle et c'est dans ce but que l'on a étudié selon divers algorithmes le temps de réveil du cas "uniforme" à $n$ robots que l'on appelera $\beta_n$.
 
-En utilisant nos algorithmes afin de tracer des approximations de $\beta_n$, on a pu émettre une conjecture disant que $\beta_{2n}$ serait décroissante. Une telle conclusion serait très puissante puisque l'on peut aussi conjecturer que $\beta_{2n + 1} \leq \beta_{2n}$ et donc que $\beta_4 = \alpha_4$ est bien le maximum global et de posséder une preuve de cela.
-Telle conclusion parait naturel et bien qu'il ne s'agisse que de conjectures, nous verrons plus tard que les conjectures dans ce problème sont très précieuses.
+En utilisant nos algorithmes afin de tracer des approximations de $\beta_n$, on a pu émettre une conjecture indiquant que $\beta_{2n}$ serait décroissante. Cela serait un pas en avant dans la recherche pour montrer que $\alpha_4$ est bien le maximum strict.
 
-Pour essayer de se donner une idée de la potentielle vérité derrière ces conjectures, il est intéressant d'améliorer nos algorithmes précédemment implémentés en python afin d'obtenir des valeurs pour $n$ plus grand.
+Pour tenter de s'assurer de la véracité de ces formules, il est d'abord intéressant de la tester pour divers valeurs de $n$. Mon travail a donc été ici la réimplémentation en C++ d'algorithmes python afin de les accélérer et en particulier pour le cas où les points sont répartis uniformément dans le cercle.
 
 \subsection{Premier algorithme "Segment"}
 
