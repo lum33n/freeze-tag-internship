@@ -2,7 +2,7 @@
 
 \subsection{Présentation du problème}
 
-Le problème du réveil des robots consiste en un robot éveillé et des robots endormis dans un disque autour de lui. Un robot éveillé peut aller vers d'autres robots pour les réveiller et l'objectif est de réveiller tous les robots le plus vite possible.
+Dans le cadre de ce problème, on dispose de $n$ robots endormis et un robot éveillé sur un plan. Le robot éveillé va chercher à les autres robots avec l'aide des robots qu'il aura pu réveiller sur sa route.
 
 \begin{figure}[h!]
   \centering
@@ -11,9 +11,11 @@ Le problème du réveil des robots consiste en un robot éveillé et des robots 
   \label{fig:opt_non_plan}
 \end{figure}
 
-Dans le cas général, où les robots endormis sont disposés n'importe comment, le problème est NP-dur. Le meilleur algorithme existant, traçant le chemin des robots pour résoudre le cas général consiste en une programmation dynamique avec une complexité de $\frac{3^n}{\sqrt{n}}$ où $n$ est le nombre de robots.
+Sur cette figure, on commence par deux robots éveillé au niveau de la croix qui vont chacun réveiller un robot qui à leurs tours vont aller en réveiller d'autres selon les segments de couleurs de la figure.
 
-Il reste cependant beaucoup de choses à explorer sur ce problème lorsque l'on considère des sous catégories du problème. Dans ce rapport, nous discuterons principalement de la pire configuration possible pour $n$ robots endormis soit la configuration qui crée le temps de réveil le plus grand. Le temps de réveil en question est appelé $\alpha_n$. On démontrera en particulier que $\alpha_5 < 3.603564775 < \alpha_4$ et on cassera des conjectures.
+Dans le cas général, trouver le chemin réveillant tous les robots endormis le plus vite possible est un problème NP-dur. Le meilleur algorithme existant, traçant le chemin des robots pour résoudre le cas général consiste en une programmation dynamique avec une complexité de $\frac{3^n}{\sqrt{n}}$ où $n$ est le nombre de robots endormis.
+
+On peut aussi s'intéresser à la pire configuration possible pour un nombre de robots endormis donnés afin de majorer le temps de réveil. On appelle la borne du temps de réveil pour $n$ robots $\alpha_n$. Cette borne est cependant très compliquée à calculer. On connaît la valeur pour $n = 1$,$2$,$3$ et $4$ mais après, les valeurs sont inconnues.
 \clem{Il fadra qu'on revoit l'introduction, mais cela peut attendre le reste}
 \subsection{Formalisation}
 
