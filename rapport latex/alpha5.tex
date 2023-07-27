@@ -104,12 +104,12 @@ La preuve fonctionne en trouvant pour chaque cas un arbre dont la longueur est a
 
 Soit $\alpha > 0$ et $P$ un ensemble de 5 points Tout d'abord on tournera notre figure en sélectionnant un point tel que son axe coupe le cercle en deux demi-cercles contenant chacun 2 points. Un tel point existe toujours.
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{initial_position}
-  \caption{position initiale}
-  \label{fig:initial_position}
-\end{figure}
+%  \caption{position initiale}
+%  \label{fig:initial_position}
+%\end{figure}
 
 On sépare ensuite le cercle en différents cônes d'angle $\alpha$ nommés $A$,
 $B$, $C$, et $D$ comme sur la figure \ref{fig:initial_position}. C'est en effet ce $\alpha$ qui apparaîtra dans la formule finale. On notera $|X|$ le nombre de point dans le cône $X$.
@@ -125,12 +125,12 @@ On prend $T$ l'arbre commençant au noeud de $A$ et explorant de part et d'autre
 Soit $P'$ l'ensemble de point sur le cercle où les deux points des demi cercles sont répartis entre $A$ et $D$.
 On a $\gamma(P) \leq  \gamma(T, P) \leq \gamma(T, P')$
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{2eme_cas}
-  \caption{Résolution 2e cas}
-  \label{fig:2eme_cas}
-\end{figure}
+%  \caption{Résolution 2e cas}
+%  \label{fig:2eme_cas}
+%\end{figure}
 
 En effet, d'après \ref{worstchord} le pire cas pour $P$ est d'avoir un point le plus loin possible de A et d'avoir des arcs égaux, positionnant donc le dernier point du demi-cercle pile entre le point de $A$ et celui collant $D$. On a alors
 
@@ -150,12 +150,12 @@ Par symétrie, on peut considérer que le point dans $D$ appartient au demi-cerc
 on choisit pour T l'arbre commençant en bas à gauche et séparant le travail des robots en 2 comme avant.
 On prend ensuite le pire cas possible pour ce T.
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{3eme_cas1}
-  \caption{Résolution 3e cas n1}
-  \label{fig:3eme_cas1}
-\end{figure}
+%  \caption{Résolution 3e cas n1}
+%  \label{fig:3eme_cas1}
+%\end{figure}
 
 En oubliant pas que l'angle entre $a$ et le point en bas à gauche est d'au moins $\alpha$ on peut donc appliquer le lemme \ref{worstchord} afin de conclure
 $\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
@@ -163,12 +163,12 @@ $\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
 \item \label{3cas12} si $b$ entre $A$ et $B$ et deux points entre $C$ et $D$
 l'arbre est le suivant:
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{3eme_cas2}
-  \caption{Résolution 3e cas n2}
-  \label{fig:3eme_cas2}
-\end{figure}
+%  \caption{Résolution 3e cas n2}
+%  \label{fig:3eme_cas2}
+%\end{figure}
 
 Ici on néglige la branche rose car elle a une longueur totale de 3 (ce sera aussi fait dans les cas suivants)
 La longueur de la branche bleue est ici $\leq 1+\chord\left(\frac{\pi}{2} - \alpha\right)+\chord(\frac{\pi}{2}) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
@@ -187,12 +187,12 @@ $=> \gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
 \item \label{3cas21} Le seul cas difficile est celui où les deux points du bas sont entre $A$ et $C$.
 suivant l'arbre suivant:
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{3eme_cas3}
-  \caption{Résolution 3e cas n3}
-  \label{fig:3eme_cas3}
-\end{figure}
+%  \caption{Résolution 3e cas n3}
+%  \label{fig:3eme_cas3}
+%\end{figure}
 
 La branche bleue ici se résout encore une fois par \ref{worstchord}
 La branche jaune est négligée
@@ -206,12 +206,12 @@ on obtient alors
 
 \item \label{3cas22} Si l'on a 2 points entre $C$ et $D$, alors on peut effectuer l'arbre suivant
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{3eme_cas4}
-  \caption{Résolution 3e cas n4}
-  \label{fig:3eme_cas4}
-\end{figure}
+%  \caption{Résolution 3e cas n4}
+%  \label{fig:3eme_cas4}
+%\end{figure}
 
 On peut alors comme d'habitude utiliser \ref{worstchord} pour conclure
 
@@ -241,12 +241,12 @@ on a alors le chemin standard commençant par le 5ème point qui nous donne par 
 
 \item \label{4cas2} si ca n'est pas le cas alors on prend l'arbre commençant en ce 5 ème point mais allant vers le point le plus proche et le plus éloigné ainsi
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{4eme_cas}
-  \caption{Résolution 4e cas}
-  \label{fig:4eme_cas}
-\end{figure}
+%  \caption{Résolution 4e cas}
+%  \label{fig:4eme_cas}
+%\end{figure}
 
 La branche rose est négligée
 la branche bleue est a sa première partie bornée par une corde de taille $\frac{\pi}{4}$ car le point du milieu est en dessous de la ligne diagonal d'un angle au moins $\frac{\alpha}{2}$ et la deuxième partie par $\frac{\pi}{2} + \alpha$
@@ -270,23 +270,23 @@ on a donc $\gamma(P) \leq 1 + \chord(\frac{\pi}{4}) + \chord(\frac{\pi}{2} + \al
 \item \label{5cas12} si en bas on a les deux points du même côté, on commence par celui au milieu des deux points qui le collent pour obtenir le même résultat.
 Dans le cas où les deux points sont entre C et D on a donc
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{5eme_cas1}
-  \caption{Résolution 5e cas n1}
-  \label{fig:5eme_cas1}
-\end{figure}
+%  \caption{Résolution 5e cas n1}
+%  \label{fig:5eme_cas1}
+%\end{figure}
 
 Nous sommes ici encore en capacité d'utiliser \ref{worstchord}
 
 \label{5cas13} Dans le cas où les deux sont entre A et C on a
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{5eme_cas1bis}
-  \caption{Résolution 5e cas n1bis}
-  \label{fig:5eme_cas1bis}
-\end{figure}
+%  \caption{Résolution 5e cas n1bis}
+%  \label{fig:5eme_cas1bis}
+%\end{figure}
 
 grâce à l'écart d'angle entre les points, on a bien encore une fois les conditions d'applications de \ref{worstchord}
 
@@ -298,23 +298,23 @@ grâce à l'écart d'angle entre les points, on a bien encore une fois les condi
 
 \item \label{5cas21} si point libre du haut entre A et B et point du bas entre A et C
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{5eme_cas2}
-  \caption{Résolution 5e cas n2}
-  \label{fig:5eme_cas2}
-\end{figure}
+%  \caption{Résolution 5e cas n2}
+%  \label{fig:5eme_cas2}
+%\end{figure}
 
 en oubliant pas que le point de départ est forcément éloigné d'un angle $\alpha$ de $a$ on a bien le résultat par \ref{worstchord}
 
 \item \label{5cas22} si point libre du haut entre A et B et point du bas entre C et D alors cela dépend de $b$. Si $b$ est sur le côté droit, on commence effectue cet arbre:
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{5eme_cas3}
-  \caption{Résolution 5e cas n3}
-  \label{fig:5eme_cas3}
-\end{figure}
+%  \caption{Résolution 5e cas n3}
+%  \label{fig:5eme_cas3}
+%\end{figure}
 
 on a alors
 
@@ -324,21 +324,21 @@ si maintenant $b$ est sur le côté gauche, on peut commencer par $b$. On effect
 
 \item \label{5cas23} si point libre du haut entre B et D et point libre du bas entre C et D on a l'arbre suivant.
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{5eme_cas4}
-  \caption{Résolution 5e cas n4}
-  \label{fig:5eme_cas4}
-\end{figure}
+%  \caption{Résolution 5e cas n4}
+%  \label{fig:5eme_cas4}
+%\end{figure}
 
 \item \label{5cas24} si point libre du haut entre B et D et point libre du bas entre A et C cela dépend à nouveau de $b$. Si $b$ à droite on a (en allant vers le point le plus proche):
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{5eme_cas5}
-  \caption{Résolution 5e cas n5}
-  \label{fig:5eme_cas5}
-\end{figure}
+%  \caption{Résolution 5e cas n5}
+%  \label{fig:5eme_cas5}
+%\end{figure}
 
 en effet, on obtient alors en allant vers le plus proche que la longueur de la branche qui effectue le croisement est plus petite que $1+\chord\left(\frac{\frac{\pi}{2} + \frac{\alpha}{2}}{2}\right) + \chord\left(\frac{\pi}{4} + \frac{\alpha}{4}\right)$ or cette valeur est inférieure à $\max\left(3 + \chord\left(\alpha\right), 1 + 2\chord\left(\frac{\pi}{2} - \frac{\alpha}{4}\right)\right)$ on a alors le résultat souhaité.
 
@@ -352,12 +352,12 @@ cependant si $b$ est à gauche on peut alors commencer par $b$ pour finir le pro
 Désormais, il faut terminer avec les cas où l'enveloppe convexe est de taille 3 ou 4. Heureusement, ces cas sont plus simples.
 Si l'enveloppe convexe est de taille 3, on va vers le point le plus proche du centre qui soit à l'intérieur de l'enveloppe convexe, ensuite un des deux robots ira chercher le deuxième point à l'intérieur tandis que le deuxième ira réveiller le point le plus proche du triangle avant d'aller sur les deux autres.
 
-\begin{figure}[h!]
-  \centering
+%\begin{figure}[h!]
+%  \centering
   \includegraphics[scale=0.4]{n3}
-  \caption{Résolution Pour une enveloppe convexe de taille 3}
-  \label{fig:n3}
-\end{figure}
+%  \caption{Résolution Pour une enveloppe convexe de taille 3}
+%  \label{fig:n3}
+%\end{figure}
 
 En effet, le pire cas est si le point que l'on rejoint en premier est projeté sur l'enveloppe convexe orthogonalement ce qui nous donne $\exists \theta, \gamma(P) \leq \cos(\theta) + \sin(\theta) + 2 \leq \sqrt{2} + 2 \leq \max(3 + \chord(\alpha), 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4}))$
 
