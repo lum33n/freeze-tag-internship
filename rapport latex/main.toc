@@ -1,0 +1,16 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Présentation du problème}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Formalisation}{2}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}problème du réveil des robots}{2}{subsubsection.1.2.1}%
+\contentsline {section}{\numberline {2}Alpha 5}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Description des Cas}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Enveloppe convexe de taille 5}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Enveloppe convexe de taille 4 ou 3}{11}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}conclusion de la preuve}{11}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Implémentation C++}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Premier algorithme "Segment"}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Brute force}{13}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Mon propre algorithme}{15}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Conjectures}{15}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Conclusion}{17}{section.4}%

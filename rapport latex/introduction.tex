@@ -13,31 +13,13 @@ Dans le cadre de ce problème, on dispose de $n$ robots endormis et un robot év
 
 Sur cette figure, on commence par deux robots éveillé au niveau de la croix qui vont chacun réveiller un robot qui à leurs tours vont aller en réveiller d'autres selon les segments de couleurs de la figure.
 
-Dans le cas général, trouver le chemin réveillant tous les robots endormis le plus vite possible est un problème NP-dur. Le meilleur algorithme existant, traçant le chemin des robots pour résoudre le cas général consiste en une programmation dynamique avec une complexité de $\frac{3^n}{\sqrt{n}}$ où $n$ est le nombre de robots endormis.
+Dans le cas général, trouver le chemin réveillant tous les robots endormis le plus vite possible est un problème NP-dur. Le meilleur algorithme existant, traçant le chemin des robots quelque soit l'emplacement des robots consiste en une programmation dynamique avec une complexité de $\frac{3^n}{\sqrt{n}}$ où $n$ est le nombre de robots endormis.
 
 On peut aussi s'intéresser à la pire configuration possible pour un nombre de robots endormis donnés afin de majorer le temps de réveil. On appelle la borne du temps de réveil pour $n$ robots $\alpha_n$. Cette borne est cependant très compliquée à calculer. On connaît la valeur pour $n = 1$,$2$,$3$ et $4$ mais après, les valeurs sont inconnues.
 \clem{Il fadra qu'on revoit l'introduction, mais cela peut attendre le reste}
 \subsection{Formalisation}
 
 \subsubsection{problème du réveil des robots}
-
-Le problème se place sur un plan muni de la distance euclidienne. Le robot réveillé est en $(0,0)$ et le problème se constitue donc de $n$ points chacun représentant les robots endormis dans le disque de rayon 1 et de centre $(0,0)$. On représente une solution au problème du réveil des robots par un arbre binaire couvrant tous les sommets. En effet, en chaque sommet, un robot entre, et on a alors 2 robots à déplacer si no le souhaite, formant alors un arbre binaire dont la racine est le premier robot éveillé.
-
-On pondère les arêtes de notre arbre par la distance de l'arête et on considère la profondeur de l'arbre comme étant la somme des poids des arêtes depuis la racine. Dès lors, le temps de réveil d'un arbre donné est la longueur de la plus grande branche et le temps de réveil du problème est $\min_{T} \tr(T, x_1, \dots, x_n)$ où $\tr$ est le temps de réveil sachant un arbre T et l'objectif d'un algorithme est d'obtenir un arbre minimum.
-
-On peut alors définir $\alpha_n = \max_{x_1, .., x_n} \min_T \tr(T, x_1, ..,
-x_n)$
-
-On a déjà $\alpha_1 = 1$,$\alpha_2 = \alpha_3 = 3$ et $\alpha_4 = 1 + 2\sqrt{2}$. De plus, grâce à des cônes, nous avons que $\alpha_n \leq 3 + \frac{8\pi}{\sqrt{n}}$ il est possible de faire mieux en pratique mais le résultat possède une constante plus compliquée que $8\pi$
-
-\begin{theorem}
-  Réveiller tous les robots dans un cône d'angle $\theta$ et de rayon $r$
-  peut être fait en un temps $\leq r(1 + chord(theta))$
-\end{theorem}
-
-
-\todo[inline]{Je pense qu'il faut écrire de manière un peu plus formel, dans un
-  style un peu plus académique. Par exemple :}
 
 Dans ce rapport, nous nous travaillerons sur le plan muni de la distance
 euclidienne (voir \cite{} pour d'autres métriques). Le robot réveillé débute en

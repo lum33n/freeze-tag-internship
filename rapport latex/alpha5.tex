@@ -347,7 +347,7 @@ cependant si $b$ est à gauche on peut alors commencer par $b$ pour finir le pro
 \end{itemize}
 \end{itemize}
 
-\subsection{convexe de taille 4 ou 3}\label{conv3}
+\subsection{Enveloppe convexe de taille 4 ou 3}\label{conv3}
 
 Désormais, il faut terminer avec les cas où l'enveloppe convexe est de taille 3 ou 4. Heureusement, ces cas sont plus simples.
 Si l'enveloppe convexe est de taille 3, on va vers le point le plus proche du centre qui soit à l'intérieur de l'enveloppe convexe, ensuite un des deux robots ira chercher le deuxième point à l'intérieur tandis que le deuxième ira réveiller le point le plus proche du triangle avant d'aller sur les deux autres.
@@ -363,6 +363,6 @@ En effet, le pire cas est si le point que l'on rejoint en premier est projeté s
 
 Note: En réalité, cela fonctionne quelque soit l'emplacement du deuxième point à l'intérieur, et donc également si il n'est pas dans l'enveloppe connexe, et il est donc possible de traiter par exactement la même méthode le cas où l'enveloppe convexe est de taille 4.
 
-\subsection{conclusion of the proof}
+\subsection{conclusion de la preuve}
 
 Cela conclut la preuve, trouvant ainsi une borne pour $\alpha_5$ montrant également que $\alpha_5 < \alpha_4$. On remarquera que plus on fait de disjonctions de cas, plus il est possible d'affiner le choix de l'arbre selon les situations, permettant ainsi d'obtenir une meilleure borne.
