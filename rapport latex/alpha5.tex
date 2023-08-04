@@ -18,7 +18,10 @@ où $\chord$ représente la longueur d'un arc de cercle de rayon 1 et d'angle $\
 
 \begin{proof}[Preuve de \ref{alpha5borne} en supposant Lemme \ref{chord}]
 
-$\alpha \mapsto 3+\chord(\alpha)$ étant croissante $\alpha \mapsto 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$ étant décroissante, le minimum des deux fonctions est atteint en leur croisement qui se produit en une abscisse d'environ $0.6131233066$ et dont la valeur exacte n'est pas facilement calculable. Ainsi on a
+$\alpha \mapsto 3+\chord(\alpha)$ étant croissante $\alpha \mapsto 1 +
+2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$ étant décroissante, le minimum des
+deux fonctions est atteint en leur croisement qui se produit pour un angle
+$\alpha \approx 0.6131233066$ et dont la valeur exacte n'est pas facilement calculable. Ainsi on a
 
 \(\forall P, \gamma(P) < 3.603564775\)
 
@@ -49,6 +52,11 @@ et donc $\forall P, \forall T, \gamma(P) \leq \gamma(T, P)$
 
 La preuve fonctionne en trouvant pour chaque cas un arbre dont la longueur est au pire plus petite ou égale à la borne souhaitée.
 
+\todo[inline]{$A$, $B$, $C$ et $D$ ne sont pas encore connus ici, je propose de
+  dire simplement que tu fais une disjonction de cas en fonction du nombre de
+  points sur l'enveloppe convexe, et de faire l'annonce de plan plus détaillée
+  juste avant le 1er cas}
+\todo{Renommer les cas pour que ce soit cliquable et avec le bon nom. Je m'en occupe.}
 \begin{itemize}
 	\item \ref{conv5} Enveloppe convexe de taille 5
 	\begin{itemize}
@@ -102,7 +110,10 @@ La preuve fonctionne en trouvant pour chaque cas un arbre dont la longueur est a
 
 \subsection{Enveloppe convexe de taille 5}\label{conv5}
 
-Soit $\alpha > 0$ et $P$ un ensemble de 5 points Tout d'abord on tournera notre figure en sélectionnant un point tel que son axe coupe le cercle en deux demi-cercles contenant chacun 2 points. Un tel point existe toujours.
+Soit $\alpha > 0$ et $P$ un ensemble de 5 points. Tout d'abord on tournera notre
+figure en sélectionnant un point tel que son axe coupe le cercle en deux
+demi-cercles contenant chacun 2 points. Un tel point existe toujours.\clem{il
+  faudrait le justifier rapidement}
 
 %\begin{figure}[h!]
 %  \centering
@@ -111,13 +122,26 @@ Soit $\alpha > 0$ et $P$ un ensemble de 5 points Tout d'abord on tournera notre 
 %  \label{fig:initial_position}
 %\end{figure}
 
-On sépare ensuite le cercle en différents cônes d'angle $\alpha$ nommés $A$,
-$B$, $C$, et $D$ comme sur la figure \ref{fig:initial_position}. C'est en effet ce $\alpha$ qui apparaîtra dans la formule finale. On notera $|X|$ le nombre de point dans le cône $X$.
+  On sépare ensuite le cercle en différents cônes d'angle $\alpha$ nommés $A$,
+  $B$, $C$, et $D$ comme sur la figure \ref{fig:initial_position}. C'est en
+  effet ce $\alpha$ qui apparaîtra dans la formule finale. On notera $|X|$ le
+  nombre de point dans le cône $X$.
 
-\subsubsection*{1er cas}\label{1cas} Supposons qu'il existe deux points inclus dans un cône d'angle $\alpha$
+\subsubsection*{1er cas}\label{1cas} Supposons qu'il existe deux points inclus
+dans un cône $X$\todo{N'hésite pas à nommer les objets pour
+  en parler plus facilement par la suite:} d'angle $\alpha$.
+\todo[inline]{Je pense que le premier cas devrait être traité avant la
+  subdivision en cônes fixés, car l'hypothèse utilisée par la suite n'est pas ``chaque
+  cône $A$, $B$, $C$ et $D$ contient au plus un point'' mais ``tous les points
+  sont mutuellement espacés d'un angle au moins $\alpha$''}
 
-Dans ce cas, en réveillant les deux robots dans le cône avec celui initial, on peut aller réveiller les trois derniers où qu'ils soient dans le cercle. Réveiller les robots dans un cône d'angle $\alpha$ prend au plus un temps $1 + \chord(\alpha)$.
-On peut donc réveiller tout le monde avec $\gamma(P) \leq 1 + \chord(\alpha) + 2 = 3 + \chord(\alpha)$
+Dans ce cas, en réveillant les deux robots dans le cône $X$ avec celui initial,
+on peut aller réveiller les trois derniers où qu'ils soient dans le
+cercle. \todo{il faut justifier cela, au moins les premières fois que tu utilise
+  cet argument:} D'après Théoreme \ref{thm:cone}, réveiller les robots dans
+un cône $X$ d'angle $\alpha$ prend au plus un temps $1 + \chord(\alpha)$.  On
+peut donc réveiller tout le monde avec
+$\gamma(P) \leq 1 + \chord(\alpha) + 2 = 3 + \chord(\alpha)$.
 
 \subsubsection*{2ème cas}\label{2cas} $|D| = 0$
 
@@ -132,22 +156,25 @@ On a $\gamma(P) \leq  \gamma(T, P) \leq \gamma(T, P')$
 %  \label{fig:2eme_cas}
 %\end{figure}
 
-En effet, d'après \ref{worstchord} le pire cas pour $P$ est d'avoir un point le plus loin possible de A et d'avoir des arcs égaux, positionnant donc le dernier point du demi-cercle pile entre le point de $A$ et celui collant $D$. On a alors
-
-$\gamma(P) \leq \gamma(T, P') = 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
+En effet, d'après Lemme \ref{worstchord}\todo{Donne le type de proposition que tu
+  utilise quand tu y réfère (ex: Lemme, Théorème,.. etc} le pire cas pour $P$ est d'avoir un point le plus loin possible de A et d'avoir des arcs égaux, positionnant donc le dernier point du demi-cercle pile entre le point de $A$ et celui collant $D$. On a alors
+$$\gamma(P) \leq \gamma(T, P') = 1 + 2\chord\left(\frac{\pi}{2} -
+  \frac{\alpha}{4}\right)$$\todo{Ne pas hésiter à utiliser left et right autour
+  des parenthèse pour adapter leurs tailles au contenu}
 
 \subsubsection*{3ème cas}\label{3cas} $|B| = |C| = 0$ ($|A| = 1$ et $|D| = 1$)
 Par symétrie, on peut considérer que le point dans $D$ appartient au demi-cercle du haut et donc que l'on a un seul point en haut qui ne soit pas dans $D$ que l'on nommera $b$.
 
 \begin{itemize}
 
-\item \label{3cas1} Si $b$ est entre $A$ et $B$
+\item \label{3cas1} Si $b$ est entre $A$ et $B$.
 
 \begin{itemize}
 
-\item \label{3cas11} si $b$ entre $A$ et $B$ et il y a en bas 1 point de chaque côté
+\item \label{3cas11} si $b$ entre $A$ et $B$ et il y a en bas 1 point de chaque
+  côté de $C$.
 
-on choisit pour T l'arbre commençant en bas à gauche et séparant le travail des robots en 2 comme avant.
+On choisit pour T l'arbre commençant en bas à gauche et séparant le travail des robots en 2 comme avant.
 On prend ensuite le pire cas possible pour ce T.
 
 %\begin{figure}[h!]
@@ -158,7 +185,10 @@ On prend ensuite le pire cas possible pour ce T.
 %\end{figure}
 
 En oubliant pas que l'angle entre $a$ et le point en bas à gauche est d'au moins $\alpha$ on peut donc appliquer le lemme \ref{worstchord} afin de conclure
-$\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
+$\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$\todo[inline]{Cela
+  rejoint mon commentaire dans le premier cas: ce qui est utilisé ici est que
+  l'écart entre les points est d'au moins $\alpha$., ce qui est plus fort que
+  ``aucun des cônes $A$,.. $D$ ne contient deux points''}
 
 \item \label{3cas12} si $b$ entre $A$ et $B$ et deux points entre $C$ et $D$
 l'arbre est le suivant:
