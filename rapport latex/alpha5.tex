@@ -115,15 +115,15 @@ figure en sélectionnant un point tel que son axe coupe le cercle en deux
 demi-cercles contenant chacun 2 points. Un tel point existe toujours.\clem{il
   faudrait le justifier rapidement}
 
-%\begin{figure}[h!]
-%  \centering
+\begin{figure}[h!]
+ \centering
   \includegraphics[scale=0.4]{initial_position}
-%  \caption{position initiale}
-%  \label{fig:initial_position}
-%\end{figure}
+ \caption{position initiale}
+ \label{fig:initial_position}
+\end{figure}
 
   On sépare ensuite le cercle en différents cônes d'angle $\alpha$ nommés $A$,
-  $B$, $C$, et $D$ comme sur la figure \ref{fig:initial_position}. C'est en
+  $B$, $C$, et $D$ comme sur la Figure \ref{fig:initial_position}. C'est en
   effet ce $\alpha$ qui apparaîtra dans la formule finale. On notera $|X|$ le
   nombre de point dans le cône $X$.
 
@@ -138,7 +138,7 @@ dans un cône $X$\todo{N'hésite pas à nommer les objets pour
 Dans ce cas, en réveillant les deux robots dans le cône $X$ avec celui initial,
 on peut aller réveiller les trois derniers où qu'ils soient dans le
 cercle. \todo{il faut justifier cela, au moins les premières fois que tu utilise
-  cet argument:} D'après Théoreme \ref{thm:cone}, réveiller les robots dans
+  cet argument:} D'après le Théoreme \ref{thm:cone}, réveiller les robots dans
 un cône $X$ d'angle $\alpha$ prend au plus un temps $1 + \chord(\alpha)$.  On
 peut donc réveiller tout le monde avec
 $\gamma(P) \leq 1 + \chord(\alpha) + 2 = 3 + \chord(\alpha)$.
@@ -246,7 +246,7 @@ aussi fait dans les cas suivants). \todo{détail: Je pense qu'il vaut mieux dire
   branche menant à $b$'' que la branche rose car toute la branche n'est pas
   rose.}
 La longueur de la branche bleue est ici \add{majorée par} \st{$\leq$} $1+\chord\left(\frac{\pi}{2} - \alpha\right)+\chord(\frac{\pi}{2}) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$.
-Et pour la dernière branche, on applique Lemme \ref{worstchord} pour obtenir
+Et pour la dernière branche, on applique le \cref{worstchord} pour obtenir
 cette borne exacte
 
 \st{$=>$}$$\gamma(P) \leq 1 + 2\chord\left(\frac{\pi}{2} -
@@ -287,27 +287,29 @@ on obtient alors
 &\leq 1+2\chord\left(\frac{\pi}{2} - \frac{\alpha}{4}\right)
 \end{align*}
 
-\item \label{3cas22} Si l'on a 2 points entre $C$ et $D$, alors on peut effectuer l'arbre suivant
-
+\item \label{3cas22} Si l'on a 2 points entre $C$ et $D$, alors on peut
+  effectuer l'arbre \add{représenté Figure~\ref{fig:3eme_cas4}.}
 %\begin{figure}[h!]
 %  \centering
-  \includegraphics[scale=0.4]{3eme_cas4}
+%  \includegraphics[scale=0.4]{3eme_cas4}
 %  \caption{Résolution 3e cas n4}
 %  \label{fig:3eme_cas4}
 %\end{figure}
 
-On peut alors comme d'habitude utiliser \ref{worstchord} pour conclure
+On peut alors comme d'habitude utiliser le \cref{worstchord} pour conclure
 
-\item \label{3cas23} Pour dernier cas, nous avons 1 point de part et d'autre de la vertical en bas alors par un chemin similaire au point précédent:
+\item \label{3cas23} Pour dernier cas, nous avons 1 point de part et d'autre de
+  la vertical en bas alors par un chemin similaire au point précédent \add{(voir
+    Figure~\ref{fig:3eme_cas5}).}
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.4]{3eme_cas5}
-  \caption{Résolution 3e cas n5}
-  \label{fig:3eme_cas5}
-\end{figure}
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[scale=0.4]{3eme_cas5}
+%   \caption{Résolution 3e cas n5}
+%   \label{fig:3eme_cas5}
+% \end{figure}
 
-Comme la dernière fois \ref{worstchord} nous permet de conclure
+Comme la dernière fois le \cref{worstchord} nous permet de conclure
 
 \end{itemize}
 \end{itemize}
@@ -320,7 +322,7 @@ il reste donc un 5eme point à placer qui se trouve dans un des cônes diagonaux
 
 \item \label{4cas1} si il est dans un cône d'angle $\alpha$ au centre du cône diagonal.
 
-on a alors le chemin standard commençant par le 5ème point qui nous donne par \ref{worstchord}: $\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
+on a alors le chemin standard commençant par le 5ème point qui nous donne par le \cref{worstchord}: $\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
 
 \item \label{4cas2} si ca n'est pas le cas alors on prend l'arbre commençant en ce 5 ème point mais allant vers le point le plus proche et le plus éloigné ainsi
 
@@ -360,7 +362,7 @@ Dans le cas où les deux points sont entre C et D on a donc
 %  \label{fig:5eme_cas1}
 %\end{figure}
 
-Nous sommes ici encore en capacité d'utiliser \ref{worstchord}
+Nous sommes ici encore en capacité d'utiliser le \cref{worstchord}
 
 \label{5cas13} Dans le cas où les deux sont entre A et C on a
 
@@ -371,7 +373,8 @@ Nous sommes ici encore en capacité d'utiliser \ref{worstchord}
 %  \label{fig:5eme_cas1bis}
 %\end{figure}
 
-grâce à l'écart d'angle entre les points, on a bien encore une fois les conditions d'applications de \ref{worstchord}
+grâce à l'écart d'angle entre les points, on a bien encore une fois les
+conditions d'applications du \cref{worstchord}
 
 \end{itemize}
 
@@ -388,7 +391,7 @@ grâce à l'écart d'angle entre les points, on a bien encore une fois les condi
 %  \label{fig:5eme_cas2}
 %\end{figure}
 
-en oubliant pas que le point de départ est forcément éloigné d'un angle $\alpha$ de $a$ on a bien le résultat par \ref{worstchord}
+en oubliant pas que le point de départ est forcément éloigné d'un angle $\alpha$ de $a$ on a bien le résultat par le \cref{worstchord}
 
 \item \label{5cas22} si point libre du haut entre A et B et point du bas entre C et D alors cela dépend de $b$. Si $b$ est sur le côté droit, on commence effectue cet arbre:
 
