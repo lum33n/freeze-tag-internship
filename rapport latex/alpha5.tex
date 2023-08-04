@@ -130,7 +130,7 @@ demi-cercles contenant chacun 2 points. Un tel point existe toujours.\clem{il
 \subsubsection*{1er cas}\label{1cas} Supposons qu'il existe deux points inclus
 dans un cône $X$\todo{N'hésite pas à nommer les objets pour
   en parler plus facilement par la suite:} d'angle $\alpha$.
-\todo[inline]{Je pense que le premier cas devrait être traité avant la
+\todo[inline,backgroundcolor=red]{Je pense que le premier cas devrait être traité avant la
   subdivision en cônes fixés, car l'hypothèse utilisée par la suite n'est pas ``chaque
   cône $A$, $B$, $C$ et $D$ contient au plus un point'' mais ``tous les points
   sont mutuellement espacés d'un angle au moins $\alpha$''}
@@ -145,25 +145,65 @@ $\gamma(P) \leq 1 + \chord(\alpha) + 2 = 3 + \chord(\alpha)$.
 
 \subsubsection*{2ème cas}\label{2cas} $|D| = 0$
 
-On prend $T$ l'arbre commençant au noeud de $A$ et explorant de part et d'autre de son axe en commençant par le noeud le plus proche.
-Soit $P'$ l'ensemble de point sur le cercle où les deux points des demi cercles sont répartis entre $A$ et $D$.
+On prend $T$ l'arbre commençant au noeud de $A$ et explorant de part et d'autre
+de son axe en commençant par le noeud le plus proche (voir Figure \ref{fig:2eme_cas}).
+Soit $P'$ l'ensemble de point sur le cercle où les deux points des demi-cercles sont répartis entre $A$ et $D$.
 On a $\gamma(P) \leq  \gamma(T, P) \leq \gamma(T, P')$
 
-%\begin{figure}[h!]
-%  \centering
+\begin{figure}[h!]
+  \centering
   \includegraphics[scale=0.4]{2eme_cas}
-%  \caption{Résolution 2e cas}
-%  \label{fig:2eme_cas}
-%\end{figure}
+  \caption{Résolution 2e cas}
+  \label{fig:2eme_cas}
+\end{figure}
 
-En effet, d'après Lemme \ref{worstchord}\todo{Donne le type de proposition que tu
-  utilise quand tu y réfère (ex: Lemme, Théorème,.. etc} le pire cas pour $P$ est d'avoir un point le plus loin possible de A et d'avoir des arcs égaux, positionnant donc le dernier point du demi-cercle pile entre le point de $A$ et celui collant $D$. On a alors
+En effet, d'après le \cref{worstchord}\todo{Donne le type de proposition que tu
+  utilise quand tu y réfère (ex: Lemme, Théorème,.. etc). Pour cela, tu peux
+  utiliser la commande cref}, le pire cas pour $P$ est d'avoir un point le plus loin possible de A et d'avoir des arcs égaux, positionnant donc le dernier point du demi-cercle pile entre le point de $A$ et celui collant $D$. On a alors
 $$\gamma(P) \leq \gamma(T, P') = 1 + 2\chord\left(\frac{\pi}{2} -
-  \frac{\alpha}{4}\right)$$\todo{Ne pas hésiter à utiliser left et right autour
+  \frac{\alpha}{4}\right)$$\todo[backgroundcolor=purple]{Ne pas hésiter à utiliser left et right autour
   des parenthèse pour adapter leurs tailles au contenu}
 
 \subsubsection*{3ème cas}\label{3cas} $|B| = |C| = 0$ ($|A| = 1$ et $|D| = 1$)
 Par symétrie, on peut considérer que le point dans $D$ appartient au demi-cercle du haut et donc que l'on a un seul point en haut qui ne soit pas dans $D$ que l'on nommera $b$.
+
+\begin{figure}[h!]
+ \begin{subfigure}[t]{0.45\textwidth}
+   \centering
+   \includegraphics[scale=0.4]{3eme_cas1}
+   \caption{Résolution 3e cas n1}
+   \label{fig:3eme_cas1}
+ \end{subfigure}
+ \hfill
+ \begin{subfigure}[t]{0.45\textwidth}
+   \centering
+  \includegraphics[scale=0.4]{3eme_cas2}
+  \caption{Résolution 3e cas n2}
+  \label{fig:3eme_cas2}
+ \end{subfigure}
+ \hfill 
+ \begin{subfigure}[t]{0.45\textwidth}
+   \centering
+  \includegraphics[scale=0.4]{3eme_cas3}
+  \caption{Résolution 3e cas n3}
+  \label{fig:3eme_cas3}
+ \end{subfigure}  
+ \hfill 
+ \begin{subfigure}[t]{0.45\textwidth}
+   \centering
+   \includegraphics[scale=0.4]{3eme_cas4}
+   \caption{Résolution 3e cas n4}
+   \label{fig:3eme_cas4}
+ \end{subfigure}
+ \hfill
+ \begin{subfigure}[t]{0.45\textwidth}
+   \centering
+   \includegraphics[scale=0.4]{3eme_cas5}
+   \caption{Résolution 3e cas n5}
+   \label{fig:3eme_cas5}
+ \end{subfigure}
+ \caption{Résolutions du 3e cas ($|B| = |C| = 0$ et $|A| = |D| = 1$)}
+\end{figure}
 
 \begin{itemize}
 
@@ -171,55 +211,68 @@ Par symétrie, on peut considérer que le point dans $D$ appartient au demi-cerc
 
 \begin{itemize}
 
-\item \label{3cas11} si $b$ entre $A$ et $B$ et il y a en bas 1 point de chaque
+\item \label{3cas11} Si $b$ entre $A$ et $B$ et il y a en bas 1 point de chaque
   côté de $C$.
 
-On choisit pour T l'arbre commençant en bas à gauche et séparant le travail des robots en 2 comme avant.
-On prend ensuite le pire cas possible pour ce T.
+On choisit pour $T$ l'arbre commençant en bas à gauche et séparant le travail
+des robots en 2 comme avant (voir Figure~\ref{fig:3eme_cas1}).
+On prend ensuite le pire cas possible pour ce $T$.
 
 %\begin{figure}[h!]
 %  \centering
-  \includegraphics[scale=0.4]{3eme_cas1}
+% \includegraphics[scale=0.4]{3eme_cas1}
 %  \caption{Résolution 3e cas n1}
 %  \label{fig:3eme_cas1}
 %\end{figure}
 
-En oubliant pas que l'angle entre $a$ et le point en bas à gauche est d'au moins $\alpha$ on peut donc appliquer le lemme \ref{worstchord} afin de conclure
-$\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$\todo[inline]{Cela
+D'après le premier cas, l'angle entre $a$ et le point en bas à gauche est d'au moins $\alpha$ on peut donc appliquer le Lemme \ref{worstchord} afin de conclure
+$\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$\todo[inline,backgroundcolor=red]{Cela
   rejoint mon commentaire dans le premier cas: ce qui est utilisé ici est que
   l'écart entre les points est d'au moins $\alpha$., ce qui est plus fort que
   ``aucun des cônes $A$,.. $D$ ne contient deux points''}
 
-\item \label{3cas12} si $b$ entre $A$ et $B$ et deux points entre $C$ et $D$
-l'arbre est le suivant:
+\item \label{3cas12} Si $b$ entre $A$ et $B$ et deux points entre $C$ et $D$,
+  \add{considérons $T$} l'arbre \st{est le suivant:} représenté Figure~\ref{fig:3eme_cas2}.
 
 %\begin{figure}[h!]
 %  \centering
-  \includegraphics[scale=0.4]{3eme_cas2}
+%  \includegraphics[scale=0.4]{3eme_cas2}
 %  \caption{Résolution 3e cas n2}
 %  \label{fig:3eme_cas2}
 %\end{figure}
 
-Ici on néglige la branche rose car elle a une longueur totale de 3 (ce sera aussi fait dans les cas suivants)
-La longueur de la branche bleue est ici $\leq 1+\chord\left(\frac{\pi}{2} - \alpha\right)+\chord(\frac{\pi}{2}) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
-Et pour la dernière branche, on applique \ref{worstchord} pour obtenir cette borne exacte
+Ici on néglige la branche rose car elle a une longueur totale \add{d'au plus} 3 (ce sera
+aussi fait dans les cas suivants). \todo{détail: Je pense qu'il vaut mieux dire ``la
+  branche menant à $b$'' que la branche rose car toute la branche n'est pas
+  rose.}
+La longueur de la branche bleue est ici \add{majorée par} \st{$\leq$} $1+\chord\left(\frac{\pi}{2} - \alpha\right)+\chord(\frac{\pi}{2}) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$.
+Et pour la dernière branche, on applique Lemme \ref{worstchord} pour obtenir
+cette borne exacte
 
-$=> \gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
+\st{$=>$}$$\gamma(P) \leq 1 + 2\chord\left(\frac{\pi}{2} -
+  \frac{\alpha}{4}\right)$$
 
-\item \label{3cas13} Si $b$ entre $A$ et $B$ et deux points entre $A$ et $C$ on applique le même arbre
+\todo[inline]{Il vaut mieux éviter d'utiliser des symboles mathématiques
+  ($\forall,\exists,\leq,\Rightarrow \dots$) dans le texte, c'est un peu bancal
+  d'un point de vue logique et ça a tendance a alourdir le texte}
 
+\item \label{3cas13} Si $b$ \add{est} entre $A$ et $B$ et deux points entre $A$
+  et $C$ on applique le même arbre. \todo{Il faudrait justifier rapidement
+    pourquoi cela donne la même borne ? Quitte a utiliser des arguments de
+    symétrie ou dire quels arguments sont les mêmes pour faire court et éviter
+    les répétitions}
+  
 \end{itemize}
 
-\item \label{3cas2} Si $b$ est entre $C$ et $D$
+\item \label{3cas2} Si $b$ est entre $C$ et $D$.
 
 \begin{itemize}
 
 \item \label{3cas21} Le seul cas difficile est celui où les deux points du bas sont entre $A$ et $C$.
-suivant l'arbre suivant:
-
+\st{suivant l'arbre suivant:} \add{Considérons $T$ l'arbre représenté Figure~\ref{fig:3eme_cas3}.}
 %\begin{figure}[h!]
 %  \centering
-  \includegraphics[scale=0.4]{3eme_cas3}
+  % \includegraphics[scale=0.4]{3eme_cas3}
 %  \caption{Résolution 3e cas n3}
 %  \label{fig:3eme_cas3}
 %\end{figure}
