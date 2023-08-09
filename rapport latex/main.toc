@@ -4,10 +4,9 @@
 \contentsline {subsection}{\numberline {1.2}Formalisation}{2}{subsection.1.2}%
 \contentsline {subsubsection}{\numberline {1.2.1}problème du réveil des robots}{2}{subsubsection.1.2.1}%
 \contentsline {section}{\numberline {2}Alpha 5}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Description des Cas}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Enveloppe convexe de taille 5}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Enveloppe convexe de taille 4 ou 3}{10}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}conclusion de la preuve}{11}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.1}Enveloppe convexe de taille 5}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Enveloppe convexe de taille 4 ou 3}{10}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}conclusion de la preuve}{11}{subsection.2.3}%
 \contentsline {section}{\numberline {3}Implémentation C++}{11}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Premier algorithme "Segment"}{11}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Brute force}{13}{subsection.3.2}%
@@ -18,4 +17,4 @@
 \contentsline {subsection}{\numberline {5.1}Contexte Sociale et Institutionnel}{18}{subsection.5.1}%
 \contentsline {subsubsection}{\numberline {5.1.1}Environnement social}{18}{subsubsection.5.1.1}%
 \contentsline {subsubsection}{\numberline {5.1.2}organisation}{18}{subsubsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.2}ressources du stage}{18}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.2}Ressources du stage}{18}{subsection.5.2}%

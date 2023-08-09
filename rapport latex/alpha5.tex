@@ -13,7 +13,7 @@ Dans la suite on appellera $P$ l'ensemble des points représentant les robots en
 \begin{lemma}\label{chord}
 Pour tout $P$ de taille 5, pour tout $\alpha \in \left]0, \frac{\pi}{2}\right[$, on a
 $$\gamma(P) \leq \max\left(3 + \chord\left(\alpha\right), 1 + 2\chord\left(\frac{\pi}{2} - \frac{\alpha}{4}\right)\right)$$
-où $\chord$ représente la longueur d'un arc de cercle de rayon 1 et d'angle $\theta$. On a donc $\chord(\theta) = 2\sin(\theta/2)$
+où $\chord$ représente la longueur d'un arc de cercle de rayon 1 et d'angle $\theta$. On a donc $\chord(\theta) = 2\sin(\theta/2)$.
 \end{lemma}
 
 \begin{proof}[Preuve de \ref{alpha5borne} en supposant Lemme \ref{chord}]
@@ -25,7 +25,7 @@ $\alpha \approx 0.6131233066$ et dont la valeur exacte n'est pas facilement calc
 
 \(\forall P, \gamma(P) < 3.603564775\)
 
-Ce qui montre que $\alpha_5 < 3.603564775$
+Ce qui montre que $\alpha_5 < 3.603564775$.
 
 \end{proof}
 
@@ -58,10 +58,10 @@ Soit $\alpha > 0$ et $P$ un ensemble de 5 points.
 Supposons d'abord qu'il existe deux points inclus dans un cône d'angle $\alpha$
 
 Dans ce cas, en réveillant les deux robots dans le cône avec celui initial, on peut aller réveiller les trois derniers où qu'ils soient dans le cercle. Réveiller les robots dans un cône d'angle $\alpha$ prend au plus un temps $1 + \chord(\alpha)$.
-On peut donc utiliser \cref{coneworst} pour réveiller tout le monde avec $\gamma(P) \leq 1 + \chord(\alpha) + 2 = 3 + \chord(\alpha)$
+On peut donc utiliser \cref{coneworst} pour réveiller tout le monde avec $\gamma(P) \leq 1 + \chord(\alpha) + 2 = 3 + \chord(\alpha)$.
 \end{lemma}
 
-Par la suite on tournera notre figure en sélectionnant un point tel que son axe coupe le cercle en deux demi-cercles contenant chacun 2 points. Un tel point existe toujours. En effet, si l'on prend un point au hasard, si la répartition est 4-0  alors le deuxième voisin (du coté où il y a le plus de point) a une répartition 2-2. Si la répartition est 3-1 alors on peut tourner notre axe du côté où il y a les 3 points jusqu'à croiser un point. Si le premier point que l'on trouve est du coté où il n'y avait qu'un seul point, alors il faut aller chercher le deuxième voisin comme avant qui sera en 2-2 sinon, dans le cas où le premier point rencontré est du côté des 3 points, alors le nouveau point trouvé convient. (si les deux cas sont vrais, les deux solutions fonctionnent)
+Par la suite on tournera notre figure en sélectionnant un point tel que son axe coupe le cercle en deux demi-cercles contenant chacun 2 points. Un tel point existe toujours. En effet, si l'on prend un point au hasard, si la répartition est 4-0  alors le deuxième voisin (du coté où il y a le plus de point) a une répartition 2-2. Si la répartition est 3-1 alors on peut tourner notre axe du côté où il y a les 3 points jusqu'à croiser un point. Si le premier point que l'on trouve est du coté où il n'y avait qu'un seul point, alors il faut aller chercher le deuxième voisin comme avant qui sera en 2-2 sinon, dans le cas où le premier point rencontré est du côté des 3 points, alors le nouveau point trouvé convient. (si les deux cas sont vrais, les deux solutions fonctionnent).
 
 \begin{figure}[h!]
  \centering
@@ -81,17 +81,17 @@ Par la suite on tournera notre figure en sélectionnant un point tel que son axe
 	\item \ref{1cas} $\exists X \in {A,B,C,D}, |X| > 1$
 	\item \ref{2cas} $|D| = 0$
 	\item \ref{3cas} $|B| = |C| = 0$ (et $|D| = |A| = 1$)
-	sans perte de généralité, on suppose que le point de $D$ appartient au demi-cercle du haut
+	Sans perte de généralité, on suppose que le point de $D$ appartient au demi-cercle du haut.
 	\begin{itemize}
-		\item \ref{3cas1} le deuxième point du haut est entre $A$ et $B$
-		il reste à décider de la position des points du bas
+		\item \ref{3cas1} Le deuxième point du haut est entre $A$ et $B$
+		Il reste à décider de la position des points du bas.
 		\begin{itemize}
-			\item \ref{3cas11} 1 point du bas entre $A$ et $C$ ainsi que le dernier entre $C$ et $D$.
+			\item \ref{3cas11} 1 point du bas entre $A$ et $C$ ainsi que le dernier entre $C$ et $D$
 			\item \ref{3cas12} 2 points entre $C$ et $D$
 			\item \ref{3cas13} 2 points entre $A$ et $C$
 		\end{itemize}
-		\item \ref{3cas2} le deuxième point du haut est entre $B$ et $D$
-		de même il reste à décider de la position des points du bas
+		\item \ref{3cas2} Le deuxième point du haut est entre $B$ et $D$
+		De même il reste à décider de la position des points du bas.
 		\begin{itemize}
 			\item \ref{3cas21} 2 points entre $A$ et $C$
 			\item \ref{3cas22} 2 points entre $C$ et $D$
@@ -100,25 +100,25 @@ Par la suite on tournera notre figure en sélectionnant un point tel que son axe
 	\end{itemize}
 	\item \ref{4cas} $|A| = |B| = |C| = |D| = 1$
 	\begin{itemize}
-		\item \ref{4cas1} si le 5 ème point est dans un cône diagonal d'angle $\alpha$
-		\item \ref{4cas2} sinon
+		\item \ref{4cas1} Si le 5 ème point est dans un cône diagonal d'angle $\alpha$.
+		\item \ref{4cas2} Sinon
 	\end{itemize}
 	\item \ref{5cas} $|A| = |D| = 1$, $|C| = 0$ et $|D| = 1$
-		par symétrie, le cas $|C| = 1$, $|D| = 0$ rentre aussi dans cette catégorie, concluant la disjonction présente
+		Par symétrie, le cas $|C| = 1$, $|D| = 0$ rentre aussi dans cette catégorie, concluant la disjonction présente.
 	\begin{itemize}
-		\item \ref{5cas1} le point dans $D$ appartient au demi-cercle du haut
+		\item \ref{5cas1} Le point dans $D$ appartient au demi-cercle du haut.
 		\begin{itemize}
-			\item \ref{5cas11} si on a en bas un point de chaque côté
-			\item \ref{5cas12} si les deux point du bas sont entre $C$ et $D$
-			\item \ref{5cas13} si les deux points du bas sont entre $A$ et $C$
+			\item \ref{5cas11} Si on a en bas un point de chaque côté.
+			\item \ref{5cas12} Si les deux point du bas sont entre $C$ et $D$.
+			\item \ref{5cas13} Si les deux points du bas sont entre $A$ et $C$.
 		\end{itemize}
-		\item \ref{5cas2} le point dans $D$ appartient au demi-cercle du bas
-		on a donc 4 cas selon le positionnement du point en haut et en bas
+		\item \ref{5cas2} Le point dans $D$ appartient au demi-cercle du bas.
+		On a donc 4 cas selon le positionnement du point en haut et en bas.
 		\begin{itemize}
-			\item \ref{5cas21} Point du haut entre $A$ et $B$ et point du bas entre $A$ et $C$
-			\item \ref{5cas22} Point du haut entre $A$ et $B$ et point du bas entre $C$ et $D$
-			\item \ref{5cas23} Point du haut entre $B$ et $D$ et point du bas entre $C$ et $D$
-			\item \ref{5cas24} Point du haut entre $B$ et $D$ et point du bas entre $A$ et $C$
+			\item \ref{5cas21} Point du haut entre $A$ et $B$ et point du bas entre $A$ et $C$.
+			\item \ref{5cas22} Point du haut entre $A$ et $B$ et point du bas entre $C$ et $D$.
+			\item \ref{5cas23} Point du haut entre $B$ et $D$ et point du bas entre $C$ et $D$.
+			\item \ref{5cas24} Point du haut entre $B$ et $D$ et point du bas entre $A$ et $C$.
 		\end{itemize}
 	\end{itemize}
 \end{itemize}
@@ -206,11 +206,8 @@ On prend ensuite le pire cas possible pour ce $T$.
 %  \label{fig:3eme_cas1}
 %\end{figure}
 
-En oubliant pas que grâce au \cref{conealphachord} l'angle entre $a$ et le point en bas à gauche est d'au moins $\alpha$ on peut donc appliquer le Lemme \ref{worstchord} afin de conclure
-$\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$\todo[inline,backgroundcolor=red]{Cela
-  rejoint mon commentaire dans le premier cas: ce qui est utilisé ici est que
-  l'écart entre les points est d'au moins $\alpha$., ce qui est plus fort que
-  ``aucun des cônes $A$,.. $D$ ne contient deux points''}
+En oubliant pas que grâce au \cref{conealphachord} l'angle entre $a$ et le point en bas à gauche est d'au moins $\alpha$ on peut donc appliquer le Lemme \ref{worstchord} afin de conclure.
+$\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
 
 \item \label{3cas12} Si $b$ entre $A$ et $B$ et deux points entre $C$ et $D$,
 	Considérons $T$ l'arbre représenté Figure~\ref{fig:3eme_cas2}.
@@ -226,7 +223,7 @@ Ici on néglige la branche menant à b car elle a une longueur totale d'au plus 
 aussi fait dans les cas suivants).
 La longueur de la branche bleue est ici majorée par $1+\chord\left(\frac{\pi}{2} - \alpha\right)+\chord(\frac{\pi}{2}) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$.
 Et pour la dernière branche, on applique le \cref{worstchord} pour obtenir
-cette borne exacte
+cette borne exacte.
 
 $$\gamma(P) \leq 1 + 2\chord\left(\frac{\pi}{2} -
   \frac{\alpha}{4}\right)$$
@@ -241,7 +238,7 @@ $$\gamma(P) \leq 1 + 2\chord\left(\frac{\pi}{2} -
 \begin{itemize}
 
 \item \label{3cas21} Le seul cas difficile est celui où les deux points du bas sont entre $A$ et $C$.
-\st{suivant l'arbre suivant:} \add{Considérons $T$ l'arbre représenté Figure~\ref{fig:3eme_cas3}.}
+Considérons $T$ l'arbre représenté Figure~\ref{fig:3eme_cas3}.
 %\begin{figure}[h!]
 %  \centering
   % \includegraphics[scale=0.4]{3eme_cas3}
@@ -251,7 +248,7 @@ $$\gamma(P) \leq 1 + 2\chord\left(\frac{\pi}{2} -
 
 La branche bleue ici se résout encore une fois par \ref{worstchord}
 La branche jaune est négligée
-et la branche violette permet le calcul de son pire cas en maximisant la longueur des cordes en respectant les contraintes angulaires. (en particulier que l'angle entre deux points doit être d'au moins $\alpha$)
+et la branche violette permet le calcul de son pire cas en maximisant la longueur des cordes en respectant les contraintes angulaires. (En particulier que l'angle entre deux points doit être d'au moins $\alpha$)
 
 on obtient alors
 \begin{align*}
@@ -260,7 +257,7 @@ on obtient alors
 \end{align*}
 
 \item \label{3cas22} Si l'on a 2 points entre $C$ et $D$, alors on peut
-  effectuer l'arbre \add{représenté Figure~\ref{fig:3eme_cas4}.}
+  effectuer l'arbre représenté Figure~\ref{fig:3eme_cas4}.
 %\begin{figure}[h!]
 %  \centering
 %  \includegraphics[scale=0.4]{3eme_cas4}
@@ -271,8 +268,8 @@ on obtient alors
 On peut alors comme d'habitude utiliser le \cref{worstchord} pour conclure
 
 \item \label{3cas23} Pour dernier cas, nous avons 1 point de part et d'autre de
-  la vertical en bas alors par un chemin similaire au point précédent \add{(voir
-    Figure~\ref{fig:3eme_cas5}).}
+  la vertical en bas alors par un chemin similaire au point précédent (voir
+    Figure~\ref{fig:3eme_cas5}).
 
 % \begin{figure}[h!]
 %   \centering
@@ -281,22 +278,22 @@ On peut alors comme d'habitude utiliser le \cref{worstchord} pour conclure
 %   \label{fig:3eme_cas5}
 % \end{figure}
 
-Comme la dernière fois le \cref{worstchord} nous permet de conclure
+Comme la dernière fois le \cref{worstchord} nous permet de conclure.
 
 \end{itemize}
 \end{itemize}
 
 \subsubsection*{4eme cas}\label{4cas} $|A| = |B| = |C| = |D| = 1$
 
-il reste donc un 5eme point à placer qui se trouve dans un des cônes diagonaux.
+Il reste donc un 5eme point à placer qui se trouve dans un des cônes diagonaux.
 
 \begin{itemize}
 
-\item \label{4cas1} si il est dans un cône d'angle $\alpha$ au centre du cône diagonal.
+\item \label{4cas1} Si il est dans un cône d'angle $\alpha$ au centre du cône diagonal.
 
-on a alors le chemin standard commençant par le 5ème point qui nous donne par le \cref{worstchord}: $\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
+On a alors le chemin standard commençant par le 5ème point qui nous donne par le \cref{worstchord}: $\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
 
-\item \label{4cas2} si ca n'est pas le cas alors on prend l'arbre commençant en ce 5 ème point mais allant vers le point le plus proche et le plus éloigné ainsi
+\item \label{4cas2} Si ca n'est pas le cas alors on prend l'arbre commençant en ce 5 ème point mais allant vers le point le plus proche et le plus éloigné ainsi:
 
 %\begin{figure}[h!]
 %  \centering
@@ -306,15 +303,15 @@ on a alors le chemin standard commençant par le 5ème point qui nous donne par 
 %\end{figure}
 
 La branche rose est négligée
-la branche bleue est a sa première partie bornée par une corde de taille $\frac{\pi}{4}$ car le point du milieu est en dessous de la ligne diagonal d'un angle au moins $\frac{\alpha}{2}$ et la deuxième partie par $\frac{\pi}{2} + \alpha$
-la branche jaune est symétrique à la branche bleue.
+La branche bleue est a sa première partie bornée par une corde de taille $\frac{\pi}{4}$ car le point du milieu est en dessous de la ligne diagonal d'un angle au moins $\frac{\alpha}{2}$ et la deuxième partie par $\frac{\pi}{2} + \alpha$.
+La branche jaune est symétrique à la branche bleue.
 
-on a donc $\gamma(P) \leq 1 + \chord(\frac{\pi}{4}) + \chord(\frac{\pi}{2} + \alpha) \leq \max(3 + \chord(\alpha), 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4}))$
+On a donc $\gamma(P) \leq 1 + \chord(\frac{\pi}{4}) + \chord(\frac{\pi}{2} + \alpha) \leq \max(3 + \chord(\alpha), 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4}))$
 
 \end{itemize}
 
 \subsubsection*{5ème cas}\label{5cas} $|B| = |A| = |D| = 1, |C| = 0$
-à noter que par symétrie, ca s'applique pour $|B| = 0$ et $|C| = 1$
+A noter que par symétrie, ca s'applique pour $|B| = 0$ et $|C| = 1$.
 
 \begin{itemize}
 
@@ -324,8 +321,8 @@ on a donc $\gamma(P) \leq 1 + \chord(\frac{\pi}{4}) + \chord(\frac{\pi}{2} + \al
 
 \item \label{5cas11} Si en bas il y a un point de chaque côté, on choisit le point en bas qui se trouve du côté de B et on termine de façon standard. On a alors $\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
 
-\item \label{5cas12} si en bas on a les deux points du même côté, on commence par celui au milieu des deux points qui le collent pour obtenir le même résultat.
-Dans le cas où les deux points sont entre C et D on a donc
+\item \label{5cas12} Si en bas on a les deux points du même côté, on commence par celui au milieu des deux points qui le collent pour obtenir le même résultat.
+Dans le cas où les deux points sont entre C et D on a donc:
 
 %\begin{figure}[h!]
 %  \centering
@@ -334,9 +331,9 @@ Dans le cas où les deux points sont entre C et D on a donc
 %  \label{fig:5eme_cas1}
 %\end{figure}
 
-Nous sommes ici encore en capacité d'utiliser le \cref{worstchord}
+Nous sommes ici encore en capacité d'utiliser le \cref{worstchord}.
 
-\label{5cas13} Dans le cas où les deux sont entre A et C on a
+\label{5cas13} Dans le cas où les deux sont entre A et C on a:
 
 %\begin{figure}[h!]
 %  \centering
@@ -345,16 +342,16 @@ Nous sommes ici encore en capacité d'utiliser le \cref{worstchord}
 %  \label{fig:5eme_cas1bis}
 %\end{figure}
 
-grâce à l'écart d'angle entre les points, on a bien encore une fois les
-conditions d'applications du \cref{worstchord}
+Grâce à l'écart d'angle entre les points, on a bien encore une fois les
+conditions d'applications du \cref{worstchord}.
 
 \end{itemize}
 
-\item \label{5cas2} Si le point dans D appartient au demi-cercle du bas, on a 4 cas
+\item \label{5cas2} Si le point dans D appartient au demi-cercle du bas, on a 4 cas:
 
 \begin{itemize}
 
-\item \label{5cas21} si point libre du haut entre A et B et point du bas entre A et C
+\item \label{5cas21} Si point libre du haut entre A et B et point du bas entre A et C.
 
 %\begin{figure}[h!]
 %  \centering
@@ -363,9 +360,9 @@ conditions d'applications du \cref{worstchord}
 %  \label{fig:5eme_cas2}
 %\end{figure}
 
-en oubliant pas que le point de départ est forcément éloigné d'un angle $\alpha$ de $a$ on a bien le résultat par le \cref{worstchord}
+En oubliant pas que le point de départ est forcément éloigné d'un angle $\alpha$ de $a$ on a bien le résultat par le \cref{worstchord}.
 
-\item \label{5cas22} si point libre du haut entre A et B et point du bas entre C et D alors cela dépend de $b$. Si $b$ est sur le côté droit, on commence effectue cet arbre:
+\item \label{5cas22} Si point libre du haut entre A et B et point du bas entre C et D alors cela dépend de $b$. Si $b$ est sur le côté droit, on effectue cet arbre:
 
 %\begin{figure}[h!]
 %  \centering
@@ -374,13 +371,13 @@ en oubliant pas que le point de départ est forcément éloigné d'un angle $\al
 %  \label{fig:5eme_cas3}
 %\end{figure}
 
-on a alors
+On a alors
 
 $\gamma(P) \leq \max\left(1+2\chord\left(\frac{\pi}{2} - \frac{\alpha}{4}\right), 1 + \chord\left(\frac{\pi}{2} - \alpha\right) + \chord\left(\frac{\pi}{2}\right)\right) \leq 1+2\chord\left(\frac{\pi}{2} - \frac{\alpha}{4}\right)$
 
-si maintenant $b$ est sur le côté gauche, on peut commencer par $b$. On effectuant un arbre classique, le côté gauche a la bonne borne et le côté droit est facile
+Si maintenant $b$ est sur le côté gauche, on peut commencer par $b$. En effectuant un arbre classique, le côté gauche a la bonne borne et le côté droit est facile.
 
-\item \label{5cas23} si point libre du haut entre B et D et point libre du bas entre C et D on a l'arbre suivant.
+\item \label{5cas23} Si le point libre du haut est entre B et D et le point libre du bas entre C et D. On a l'arbre suivant:
 
 %\begin{figure}[h!]
 %  \centering
@@ -389,7 +386,7 @@ si maintenant $b$ est sur le côté gauche, on peut commencer par $b$. On effect
 %  \label{fig:5eme_cas4}
 %\end{figure}
 
-\item \label{5cas24} si point libre du haut entre B et D et point libre du bas entre A et C cela dépend à nouveau de $b$. Si $b$ à droite on a (en allant vers le point le plus proche):
+\item \label{5cas24} Si le point libre du haut est entre B et D et le point libre du bas est entre A et C, cela dépend à nouveau de $b$. Si $b$ est à droite on a (en allant vers le point le plus proche):
 
 %\begin{figure}[h!]
 %  \centering
@@ -398,9 +395,9 @@ si maintenant $b$ est sur le côté gauche, on peut commencer par $b$. On effect
 %  \label{fig:5eme_cas5}
 %\end{figure}
 
-en effet, on obtient alors en allant vers le plus proche que la longueur de la branche qui effectue le croisement est plus petite que $1+\chord\left(\frac{\frac{\pi}{2} + \frac{\alpha}{2}}{2}\right) + \chord\left(\frac{\pi}{4} + \frac{\alpha}{4}\right)$ or cette valeur est inférieure à $\max\left(3 + \chord\left(\alpha\right), 1 + 2\chord\left(\frac{\pi}{2} - \frac{\alpha}{4}\right)\right)$ on a alors le résultat souhaité.
+En effet, on obtient alors en allant vers le plus proche que la longueur de la branche qui effectue le croisement est plus petite que $1+\chord\left(\frac{\frac{\pi}{2} + \frac{\alpha}{2}}{2}\right) + \chord\left(\frac{\pi}{4} + \frac{\alpha}{4}\right)$ or cette valeur est inférieure à $\max\left(3 + \chord\left(\alpha\right), 1 + 2\chord\left(\frac{\pi}{2} - \frac{\alpha}{4}\right)\right)$ on a alors le résultat souhaité.
 
-cependant si $b$ est à gauche on peut alors commencer par $b$ pour finir le problème comme la dernière fois.
+Cependant si $b$ est à gauche on peut alors commencer par $b$ pour finir le problème comme la dernière fois.
 
 \end{itemize}
 \end{itemize}
