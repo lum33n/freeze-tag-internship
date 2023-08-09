@@ -1,15 +1,18 @@
 \usepackage[french]{babel}
 \usepackage[a4paper, margin=2.5cm]{geometry}
 \usepackage[utf8]{inputenc}
+\usepackage{authblk}
 %\usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{verbatim}
+\usepackage{subcaption}
 
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage[textsize=tiny, textwidth=2cm]{todonotes}
 \usepackage{thmtools}
 \usepackage[colorlinks=true, citecolor=red]{hyperref}
 \usepackage{cleveref}
+\usepackage[normalem]{ulem}
 
 \declaretheorem[name=Théorème, numberwithin=section]{theorem}
 \declaretheorem[name=Lemme, sibling=theorem]{lemma}
@@ -17,6 +20,12 @@
 \declaretheorem[name=Conjecture, sibling=theorem]{conjecture}
 %\renewcommand*{\proofname}{Preuve}
 %\addto\captionsfrench{\renewcommand\proofname{Preuve}}
+\crefname{lemma}{Lemme}{Lemmes}
+\crefname{theorem}{Théoreme}{Théoremes}
+\crefname{prop}{Proposition}{Propositions}
+\crefname{conjecture}{Conjecture}{Conjectures}
+\crefname{figure}{Figure}{Figures}
+
 
 \geometry{hmargin=2.5cm, vmargin=1.5cm}
 \graphicspath{ {./images/} }
@@ -33,3 +42,6 @@
 
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\chord}{chord}
+
+\newcommand{\st}[1]{\textcolor{red}{\sout{#1}}}
+\newcommand{\add}[1]{\textcolor{green}{#1}}
