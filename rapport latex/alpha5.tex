@@ -52,7 +52,7 @@ La preuve fonctionne en trouvant pour chaque cas un arbre dont la longueur est a
 
 \subsection{Enveloppe convexe de taille 5}\label{conv5}
 
-Soit $\alpha > 0$ et $P$ un ensemble de 5 points.
+Soit $\alpha \in \left]0, \frac{\pi}{2}\right[$ et $P$ un ensemble de 5 points.
 
 \begin{lemma}\label{conealphachord}
 Supposons d'abord qu'il existe deux points inclus dans un cône d'angle $\alpha$
@@ -61,64 +61,59 @@ Dans ce cas, en réveillant les deux robots dans le cône avec celui initial, on
 On peut donc utiliser \cref{coneworst} pour réveiller tout le monde avec $\gamma(P) \leq 1 + \chord(\alpha) + 2 = 3 + \chord(\alpha)$.
 \end{lemma}
 
-Par la suite on tournera notre figure en sélectionnant un point tel que son axe coupe le cercle en deux demi-cercles contenant chacun 2 points. Un tel point existe toujours. En effet, si l'on prend un point au hasard, si la répartition est 4-0  alors le deuxième voisin (du coté où il y a le plus de point) a une répartition 2-2. Si la répartition est 3-1 alors on peut tourner notre axe du côté où il y a les 3 points jusqu'à croiser un point. Si le premier point que l'on trouve est du coté où il n'y avait qu'un seul point, alors il faut aller chercher le deuxième voisin comme avant qui sera en 2-2 sinon, dans le cas où le premier point rencontré est du côté des 3 points, alors le nouveau point trouvé convient. (si les deux cas sont vrais, les deux solutions fonctionnent).
+Par la suite on tournera notre figure en sélectionnant un point tel que la droite passant par le point et le centre coupe le cercle en deux demi-cercles contenant chacun 2 points. Un tel point existe toujours. En effet, si l'on prend un point au hasard, si la répartition est 4-0  alors le deuxième voisin (du coté où il y a le plus de point) a une répartition 2-2. Si la répartition est 3-1 alors on peut tourner notre axe du côté où il y a les 3 points jusqu'à croiser un point. Si le premier point que l'on trouve est du coté où il n'y avait qu'un seul point, alors il faut aller chercher le deuxième voisin comme avant qui sera en 2-2 sinon, dans le cas où le premier point rencontré est du côté des 3 points, alors le nouveau point trouvé convient. (si les deux cas sont vrais, les deux solutions fonctionnent).
 
-\begin{figure}[h!]
- \centering
-  \includegraphics[scale=0.4]{initial_position}
- \caption{position initiale}
- \label{fig:initial_position}
-\end{figure}
+
+  \includegraphics[scale=0.4]{initial_position}\label{fig:initial_position}
 
   On sépare ensuite le cercle en différents cônes d'angle $\alpha$ nommés $A$,
-  $B$, $C$, et $D$ comme sur la Figure \ref{fig:initial_position}. C'est en
-  effet ce $\alpha$ qui apparaîtra dans la formule finale. On notera $|X|$ le
-  nombre de point dans le cône $X$.
+  $B$, $C$, et $D$ comme sur la Figure \ref{fig:initial_position}.C'est en
+  effet ce $\alpha$ qui apparaîtra dans la formule finale. Il est à noter que le point au centre de $A$ est celui choisi pour découper le cercle en deux partie. On notera $|X|$ le nombre de point dans le cône $X$.
 
 \subsection*{Description des Cas}
 
 \begin{itemize}
-	\item \ref{1cas} $\exists X \in {A,B,C,D}, |X| > 1$
-	\item \ref{2cas} $|D| = 0$
-	\item \ref{3cas} $|B| = |C| = 0$ (et $|D| = |A| = 1$)
+	\item \hyperref[1cas]{$\exists X \in {A,B,C,D}, |X| > 1$}
+	\item \hyperref[2cas]{$|D| = 0$}
+	\item \hyperref[3cas]{$|B| = |C| = 0$ (et $|D| = |A| = 1$)}
 	Sans perte de généralité, on suppose que le point de $D$ appartient au demi-cercle du haut.
 	\begin{itemize}
-		\item \ref{3cas1} Le deuxième point du haut est entre $A$ et $B$
+		\item \hyperref[3cas1]{Le deuxième point du haut est entre $A$ et $B$}
 		Il reste à décider de la position des points du bas.
 		\begin{itemize}
-			\item \ref{3cas11} 1 point du bas entre $A$ et $C$ ainsi que le dernier entre $C$ et $D$
-			\item \ref{3cas12} 2 points entre $C$ et $D$
-			\item \ref{3cas13} 2 points entre $A$ et $C$
+			\item \hyperref[3cas11]{1 point du bas entre $A$ et $C$ ainsi que le dernier entre $C$ et $D$}
+			\item \hyperref[3cas12]{2 points entre $C$ et $D$}
+			\item \hyperref[3cas13]{2 points entre $A$ et $C$}
 		\end{itemize}
-		\item \ref{3cas2} Le deuxième point du haut est entre $B$ et $D$
+		\item \hyperref[3cas2]{Le deuxième point du haut est entre $B$ et $D$}
 		De même il reste à décider de la position des points du bas.
 		\begin{itemize}
-			\item \ref{3cas21} 2 points entre $A$ et $C$
-			\item \ref{3cas22} 2 points entre $C$ et $D$
-			\item \ref{3cas23} 1 point dans chacune des deux zones
+			\item \hyperref[3cas21]{2 points entre $A$ et $C$}
+			\item \hyperref[3cas22]{2 points entre $C$ et $D$}
+			\item \hyperref[3cas23]{1 point dans chacune des deux zones}
 		\end{itemize}
 	\end{itemize}
-	\item \ref{4cas} $|A| = |B| = |C| = |D| = 1$
+	\item \hyperref[4cas]{$|A| = |B| = |C| = |D| = 1$}
 	\begin{itemize}
-		\item \ref{4cas1} Si le 5 ème point est dans un cône diagonal d'angle $\alpha$.
-		\item \ref{4cas2} Sinon
+		\item \hyperref[4cas1]{Si le 5 ème point est dans un cône diagonal d'angle $\alpha$.}
+		\item \hyperref[4cas2]{Sinon}
 	\end{itemize}
-	\item \ref{5cas} $|A| = |D| = 1$, $|C| = 0$ et $|D| = 1$
+	\item \hyperref[5cas]{$|A| = |D| = 1$, $|C| = 0$ et $|D| = 1$}
 		Par symétrie, le cas $|C| = 1$, $|D| = 0$ rentre aussi dans cette catégorie, concluant la disjonction présente.
 	\begin{itemize}
-		\item \ref{5cas1} Le point dans $D$ appartient au demi-cercle du haut.
+		\item \hyperref[5cas1]{Le point dans $D$ appartient au demi-cercle du haut.}
 		\begin{itemize}
-			\item \ref{5cas11} Si on a en bas un point de chaque côté.
-			\item \ref{5cas12} Si les deux point du bas sont entre $C$ et $D$.
-			\item \ref{5cas13} Si les deux points du bas sont entre $A$ et $C$.
+			\item \hyperref[5cas11]{Si on a en bas un point de chaque côté.}
+			\item \hyperref[5cas12]{Si les deux point du bas sont entre $C$ et $D$.}
+			\item \hyperref[5cas13]{Si les deux points du bas sont entre $A$ et $C$.}
 		\end{itemize}
-		\item \ref{5cas2} Le point dans $D$ appartient au demi-cercle du bas.
+		\item \hyperref[5cas2]{Le point dans $D$ appartient au demi-cercle du bas.}
 		On a donc 4 cas selon le positionnement du point en haut et en bas.
 		\begin{itemize}
-			\item \ref{5cas21} Point du haut entre $A$ et $B$ et point du bas entre $A$ et $C$.
-			\item \ref{5cas22} Point du haut entre $A$ et $B$ et point du bas entre $C$ et $D$.
-			\item \ref{5cas23} Point du haut entre $B$ et $D$ et point du bas entre $C$ et $D$.
-			\item \ref{5cas24} Point du haut entre $B$ et $D$ et point du bas entre $A$ et $C$.
+			\item \hyperref[5cas21]{Point du haut entre $A$ et $B$ et point du bas entre $A$ et $C$.}
+			\item \hyperref[5cas22]{Point du haut entre $A$ et $B$ et point du bas entre $C$ et $D$.}
+			\item \hyperref[5cas23]{Point du haut entre $B$ et $D$ et point du bas entre $C$ et $D$.}
+			\item \hyperref[5cas24]{Point du haut entre $B$ et $D$ et point du bas entre $A$ et $C$.}
 		\end{itemize}
 	\end{itemize}
 \end{itemize}
@@ -134,12 +129,7 @@ de son axe en commençant par le noeud le plus proche (voir Figure \ref{fig:2eme
 Soit $P'$ l'ensemble de point sur le cercle où les deux points des demi-cercles sont répartis entre $A$ et $D$.
 On a $\gamma\left(P\right) \leq  \gamma\left(T, P\right) \leq \gamma\left(T, P'\right)$
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.4]{2eme_cas}
-  \caption{Résolution 2e cas}
-  \label{fig:2eme_cas}
-\end{figure}
+  \includegraphics[scale=0.4]{2eme_cas}\label{fig:2eme_cas}
 
 En effet, d'après le \cref{worstchord}, le pire cas pour $P$ est d'avoir un point le plus loin possible de A et d'avoir des arcs égaux, positionnant donc le dernier point du demi-cercle pile entre le point de $A$ et celui collant $D$. On a alors
 $$\gamma\left(P\right) \leq \gamma\left(T, P'\right) = 1 + 2\chord\left(\frac{\pi}{2} -
@@ -147,44 +137,6 @@ $$\gamma\left(P\right) \leq \gamma\left(T, P'\right) = 1 + 2\chord\left(\frac{\p
 
 \subsubsection*{3ème cas}\label{3cas} $|B| = |C| = 0$ ($|A| = 1$ et $|D| = 1$)
 Par symétrie, on peut considérer que le point dans $D$ appartient au demi-cercle du haut et donc que l'on a un seul point en haut qui ne soit pas dans $D$ que l'on nommera $b$.
-
-\begin{figure}[h!]
- \begin{subfigure}[t]{0.45\textwidth}
-   \centering
-   \includegraphics[scale=0.4]{3eme_cas1}
-   \caption{Résolution 3e cas n1}
-   \label{fig:3eme_cas1}
- \end{subfigure}
- \hfill
- \begin{subfigure}[t]{0.45\textwidth}
-   \centering
-  \includegraphics[scale=0.4]{3eme_cas2}
-  \caption{Résolution 3e cas n2}
-  \label{fig:3eme_cas2}
- \end{subfigure}
- \hfill 
- \begin{subfigure}[t]{0.45\textwidth}
-   \centering
-  \includegraphics[scale=0.4]{3eme_cas3}
-  \caption{Résolution 3e cas n3}
-  \label{fig:3eme_cas3}
- \end{subfigure}  
- \hfill 
- \begin{subfigure}[t]{0.45\textwidth}
-   \centering
-   \includegraphics[scale=0.4]{3eme_cas4}
-   \caption{Résolution 3e cas n4}
-   \label{fig:3eme_cas4}
- \end{subfigure}
- \hfill
- \begin{subfigure}[t]{0.45\textwidth}
-   \centering
-   \includegraphics[scale=0.4]{3eme_cas5}
-   \caption{Résolution 3e cas n5}
-   \label{fig:3eme_cas5}
- \end{subfigure}
- \caption{Résolutions du 3e cas ($|B| = |C| = 0$ et $|A| = |D| = 1$)}
-\end{figure}
 
 \begin{itemize}
 
@@ -199,12 +151,7 @@ On choisit pour $T$ l'arbre commençant en bas à gauche et séparant le travail
 des robots en 2 comme avant (voir Figure~\ref{fig:3eme_cas1}).
 On prend ensuite le pire cas possible pour ce $T$.
 
-%\begin{figure}[h!]
-%  \centering
-% \includegraphics[scale=0.4]{3eme_cas1}
-%  \caption{Résolution 3e cas n1}
-%  \label{fig:3eme_cas1}
-%\end{figure}
+ \includegraphics[scale=0.4]{3eme_cas1}\label{fig:3eme_cas1}
 
 En oubliant pas que grâce au \cref{conealphachord} l'angle entre $a$ et le point en bas à gauche est d'au moins $\alpha$ on peut donc appliquer le Lemme \ref{worstchord} afin de conclure.
 $\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
@@ -212,12 +159,7 @@ $\gamma(P) \leq 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4})$
 \item \label{3cas12} Si $b$ entre $A$ et $B$ et deux points entre $C$ et $D$,
 	Considérons $T$ l'arbre représenté Figure~\ref{fig:3eme_cas2}.
 
-%\begin{figure}[h!]
-%  \centering
-%  \includegraphics[scale=0.4]{3eme_cas2}
-%  \caption{Résolution 3e cas n2}
-%  \label{fig:3eme_cas2}
-%\end{figure}
+  \includegraphics[scale=0.4]{3eme_cas2}\label{fig:3eme_cas2}
 
 Ici on néglige la branche menant à b car elle a une longueur totale d'au plus 3 (ce sera
 aussi fait dans les cas suivants).
@@ -239,12 +181,8 @@ $$\gamma(P) \leq 1 + 2\chord\left(\frac{\pi}{2} -
 
 \item \label{3cas21} Le seul cas difficile est celui où les deux points du bas sont entre $A$ et $C$.
 Considérons $T$ l'arbre représenté Figure~\ref{fig:3eme_cas3}.
-%\begin{figure}[h!]
-%  \centering
-  % \includegraphics[scale=0.4]{3eme_cas3}
-%  \caption{Résolution 3e cas n3}
-%  \label{fig:3eme_cas3}
-%\end{figure}
+
+ \includegraphics[scale=0.4]{3eme_cas3}\label{fig:3eme_cas3}
 
 La branche bleue ici se résout encore une fois par \ref{worstchord}
 La branche jaune est négligée
@@ -297,9 +235,7 @@ On a alors le chemin standard commençant par le 5ème point qui nous donne par 
 
 %\begin{figure}[h!]
 %  \centering
-  \includegraphics[scale=0.4]{4eme_cas}
-%  \caption{Résolution 4e cas}
-%  \label{fig:4eme_cas}
+  \includegraphics[scale=0.4]{4eme_cas}\label{fig:4eme_cas}
 %\end{figure}
 
 La branche rose est négligée
@@ -326,9 +262,7 @@ Dans le cas où les deux points sont entre C et D on a donc:
 
 %\begin{figure}[h!]
 %  \centering
-  \includegraphics[scale=0.4]{5eme_cas1}
-%  \caption{Résolution 5e cas n1}
-%  \label{fig:5eme_cas1}
+  \includegraphics[scale=0.4]{5eme_cas1}\label{fig:5eme_cas1}
 %\end{figure}
 
 Nous sommes ici encore en capacité d'utiliser le \cref{worstchord}.
@@ -337,9 +271,7 @@ Nous sommes ici encore en capacité d'utiliser le \cref{worstchord}.
 
 %\begin{figure}[h!]
 %  \centering
-  \includegraphics[scale=0.4]{5eme_cas1bis}
-%  \caption{Résolution 5e cas n1bis}
-%  \label{fig:5eme_cas1bis}
+  \includegraphics[scale=0.4]{5eme_cas1bis}\label{fig:5eme_cas1bis}
 %\end{figure}
 
 Grâce à l'écart d'angle entre les points, on a bien encore une fois les
@@ -355,9 +287,7 @@ conditions d'applications du \cref{worstchord}.
 
 %\begin{figure}[h!]
 %  \centering
-  \includegraphics[scale=0.4]{5eme_cas2}
-%  \caption{Résolution 5e cas n2}
-%  \label{fig:5eme_cas2}
+  \includegraphics[scale=0.4]{5eme_cas2}\label{fig:5eme_cas2}
 %\end{figure}
 
 En oubliant pas que le point de départ est forcément éloigné d'un angle $\alpha$ de $a$ on a bien le résultat par le \cref{worstchord}.
@@ -366,9 +296,7 @@ En oubliant pas que le point de départ est forcément éloigné d'un angle $\al
 
 %\begin{figure}[h!]
 %  \centering
-  \includegraphics[scale=0.4]{5eme_cas3}
-%  \caption{Résolution 5e cas n3}
-%  \label{fig:5eme_cas3}
+  \includegraphics[scale=0.4]{5eme_cas3}\label{fig:5eme_cas3}
 %\end{figure}
 
 On a alors
@@ -381,18 +309,14 @@ Si maintenant $b$ est sur le côté gauche, on peut commencer par $b$. En effect
 
 %\begin{figure}[h!]
 %  \centering
-  \includegraphics[scale=0.4]{5eme_cas4}
-%  \caption{Résolution 5e cas n4}
-%  \label{fig:5eme_cas4}
+  \includegraphics[scale=0.4]{5eme_cas4}\label{fig:5eme_cas4}
 %\end{figure}
 
 \item \label{5cas24} Si le point libre du haut est entre B et D et le point libre du bas est entre A et C, cela dépend à nouveau de $b$. Si $b$ est à droite on a (en allant vers le point le plus proche):
 
 %\begin{figure}[h!]
 %  \centering
-  \includegraphics[scale=0.4]{5eme_cas5}
-%  \caption{Résolution 5e cas n5}
-%  \label{fig:5eme_cas5}
+  \includegraphics[scale=0.4]{5eme_cas5}\label{fig:5eme_cas5}
 %\end{figure}
 
 En effet, on obtient alors en allant vers le plus proche que la longueur de la branche qui effectue le croisement est plus petite que $1+\chord\left(\frac{\frac{\pi}{2} + \frac{\alpha}{2}}{2}\right) + \chord\left(\frac{\pi}{4} + \frac{\alpha}{4}\right)$ or cette valeur est inférieure à $\max\left(3 + \chord\left(\alpha\right), 1 + 2\chord\left(\frac{\pi}{2} - \frac{\alpha}{4}\right)\right)$ on a alors le résultat souhaité.
@@ -409,9 +333,7 @@ Si l'enveloppe convexe est de taille 3, on va vers le point le plus proche du ce
 
 %\begin{figure}[h!]
 %  \centering
-  \includegraphics[scale=0.4]{n3}
-%  \caption{Résolution Pour une enveloppe convexe de taille 3}
-%  \label{fig:n3}
+  \includegraphics[scale=0.4]{n3}\label{fig:n3}
 %\end{figure}
 
 En effet, le pire cas est si le point que l'on rejoint en premier est projeté sur l'enveloppe convexe orthogonalement ce qui nous donne $\exists \theta, \gamma(P) \leq \cos(\theta) + \sin(\theta) + 2 \leq \sqrt{2} + 2 \leq \max(3 + \chord(\alpha), 1 + 2\chord(\frac{\pi}{2} - \frac{\alpha}{4}))$

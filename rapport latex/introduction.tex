@@ -34,8 +34,10 @@ souhaite, formant ainsi un arbre binaire dont la racine est le premier robot
 
 En pondérant les arêtes de notre arbre par la longueur de l'arête, on définit la
 profondeur de l'arbre comme étant le maximum de la somme des poids des arêtes depuis la racine jusqu'à une des feuilles de l'arbre. Le temps de réveil d'un arbre $T$ est exactement la profondeur de celui-ci, on le notera
-$\tr(T)$. L'objectif étant de réveiller les robots le plus rapidement possible,
-le temps de réveil optimal est définit comme
+$\tr(T, x_1, \dots,
+  x_n)$ avec $x_1, \dots,
+  x_n$ les robots endormis. L'objectif étant de réveiller les robots le plus rapidement possible,
+le temps de réveil d'un problème est alors défini comme
 $$\min_{\substack{T \text{ arbre binaire couvrant}\\ \text{enraciné en $(0,0)$}}} \tr(T, x_1, \dots,
   x_n).$$
 
@@ -44,14 +46,12 @@ $$\min_{\substack{T \text{ arbre binaire couvrant}\\ \text{enraciné en $(0,0)$}
 x_n)$$
 
 Il est assez facile de prouver que  $\alpha_1 = 1$ et $\alpha_2 = \alpha_3 = 3$.
-Pour $n=4$, on peut prouver (\cite{}) que $\alpha_4 = 1 + 2\sqrt{2}$.
-Gavoille, (lister les autres) ont prouvé dans \cite{} que $\alpha_n \leq 3 +
+Pour $n=4$, on peut prouver que $\alpha_4 = 1 + 2\sqrt{2}$. Il est également prouvé que $\alpha_n \leq 3 +
 \frac{8\pi}{\sqrt{n}}$. Il est possible de faire mieux en pratique mais la borne
 ferait intervenir une constante plus compliquée que $8\pi$.
 
-Dans la suite, nous utiliserons régulièrement le résultat suivant dû à Gavoille
-( et...) :
-\begin{theorem}[\cite{}]\label{coneworst}
+Dans la suite, nous utiliserons régulièrement le résultat suivant dû à Gavoille :
+\begin{theorem}[Borne sur les cônes]\label{coneworst}
   Il faut au plus $r(1 + \chord(\theta))$ pour réveiller tous les robots dans un
   cône de rayon $r$ et d'angle $\theta$, à partir d'un robot éveillé
   initialement placé au centre du cône.

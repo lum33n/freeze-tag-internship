@@ -11,8 +11,8 @@ Pour tenter de s'assurer de la véracité de ces formules, il est d'abord intér
 \large{principe de l'algorithme} il se positionne sur un point de la forme convexe, et choisi un autre point qui coupera alors le polygone en deux parties, On envoi alors un robot pour chacune de ces parties qui s'occuperont récursivement de leurs propres polygones.
 Il est important de noter que l'on utilise un cache pour introduire de la programmation dynamique et réduire la complexité.
 
-Segment est un algorithme qui a été créé pour travailler sur le cas général dans l'espoir d'obtenir un bon algorithme polynomial pour le résoudre. Le problème était NP-dur, cet algorithme ne permet en effet pas de résoudre le cas général et manque des solutions. Cyril Gavoille a tout de même prouvé qu'il existe un ordre d'entrée des points permettant à segment de donner la solution optimale. Cependant, étant donné qu'il existe $n!$ solutions, cela n'est qu'une observation.
-Dans le cas Convexe, on aurait pu espérer Cependant qu'en donnant les solutions dans l'ordre standard on puisse obtenir une solution optimale. En effet, Le cas où les points sont en position convexe laisse une question ouverte sur son appartenance à $P$. 
+Segment est un algorithme qui a été créé pour travailler sur le cas général dans l'espoir d'obtenir un bon algorithme polynomial pour le résoudre. Le problème étant NP-dur, cet algorithme ne permet en effet pas de résoudre le cas général et manque des solutions. Cyril Gavoille a tout de même prouvé qu'il existe un ordre d'entrée des points permettant à segment de donner la solution optimale. Cependant, étant donné qu'il existe $n!$ solutions, cela n'est qu'une observation.
+Dans le cas Convexe, on aurait pu espérer Cependant qu'en donnant les points dans l'ordre direct on puisse obtenir une solution optimale. En effet, Le cas où les points sont en position convexe laisse une question ouverte sur son appartenance à $P$. 
 
 il est important d'observer que dans le cas convexe avec l'ordre dans le sens des aiguilles d'une montre de la forme convexe, la solution obtenue présente des arêtes qui ne s'intersectent pas, on dit que cette solution est planaire. 
 
@@ -20,13 +20,8 @@ Dans le cadre d'un cercle où les points sont répartis uniformément, une optim
 
 Enfin, c'est ce qu'il aurait été possible de dire si segment permettait de donner les solutions optimales. Malheureusement, cela n'a pas été prouvé et dans le cas plus général convexe, on observe des solutions optimales non planaires et donc automatiquement, segment n'est pas optimal, en voici un exemple:
 
-\begin{figure}[h!]
-  \centering
   \includegraphics[scale=0.5]{opt_non_plan}
-  \includegraphics[scale=0.5]{seg_non_plan}
-  \caption{Non optimalité de Segment}
-  \label{fig:segopt}
-\end{figure}
+  \includegraphics[scale=0.5]{seg_non_plan}\label{fig:segopt}
 
 On a à gauche la solution optimale présentant un croisement, exploitant que la branche à gauche est plus courte que celle de droite tandis que sur l'image de droite, on trouve la meilleure solution planaire possible, soit celle donnée par segment. On voit donc bien que segment ne résout pas complètement le cas convexe mais l'approxime.
 
@@ -72,23 +67,13 @@ Ainsi, on possède des algorithmes plus rapides pour explorer les conjectures pl
 
 Et c'est alors en voulant dessiner un graphe des $\beta_{2n}$ (avec segment) pour le rapport de stage afin de justifier la conjecture que j'ai remarqué quelque chose... de surprenant.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.5]{beta_2n1}
-  \caption{$\beta_{2n}$}
-  \label{fig:beta2n1}
-\end{figure}
+  \includegraphics[scale=0.5]{beta_2n1}\label{fig:beta2n1}
 
 On observe bel et bien le petit saut en $n = 62$
 cependant... on observe deux pics avant cela, un pic en $n = 14$ et un faux pic en $n = 24$ qui en réalité ne casse pas la conjecture. Mais ce qui est important, c'est qu'on observe une exception bien avant $n = 62$! or pour $n = 14$ on peut aisément faire le calcul avec l'algorithme de brute force. Et l'algorithme de brute force et segment coïncident pour $n \leq 17$
 On alors bien que la conjecture était fausse. On pourrait alors imaginer de nouvelles conjectures, en particulier sur où sont les exceptions. Il a d'abord été proposé par mon encadrant des formules basées sur $4^n$ car 4 est un maximum, 16 est proche d'une exception et 64 est un maximum local. Cependant, n'ayant aucune autre exception pour $n \leq 300$ la série se casse. Peut être peut on alors se dire qu'il s'agissait d'exceptions et qu'il n'y en a plus après, et pourtant...
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.5]{beta_2n2}
-  \caption{$\beta_{2n}$ jusqu'à $n = 500$}
-  \label{fig:beta2n2}
-\end{figure}
+  \includegraphics[scale=0.5]{beta_2n2}\label{fig:beta2n2}
 
 On observe rien de plus sur cette figure, elle semble lisse après les exceptions et prend désormais en compte les $n \leq 1000$ ce qui va bien plus loin, mais.. en cherchant avec python des maximums et des minimums, voici ce que l'on obtient:
 
@@ -110,4 +95,4 @@ local minimum:  804
 local maximum:  806
 \end{verbatim}
 
-On observe nos anciens pics mais on observe surtout de nouveaux pics qui ont l'air complètement chaotiques. Cet air chaotique est probablement donné par des solutions d'équations trigonométrique mais cela montre surtout qu'il n'y a pas d'espoir de trouver des solutions simples, que nos conjectures sont justes fausses et donc que ce que certains chercheurs s'acharnaient à vouloir montrer ne pouvaient être faits car cela n'était tout simplement pas vrai... Voici quelque part ma contribution dans le domaine des conjectures. Et tout cela grâce à des algorithmes optimisés comme possible.
+On observe nos anciens pics mais on observe surtout de nouveaux pics qui ont l'air complètement chaotiques. Cet air chaotique est probablement donné par des solutions d'équations trigonométrique mais cela montre surtout qu'il n'y a pas d'espoir de trouver des solutions simples, que nos conjectures sont justes fausses et donc que ce que certains chercheurs pensaient vrai ne pouvaient l'être... Voici quelque part ma contribution dans le domaine des conjectures. Et tout cela grâce à des algorithmes optimisés comme possible.
